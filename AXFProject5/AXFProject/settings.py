@@ -80,10 +80,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'axf',
-        'HOST':'localhost',
+        'HOST':'47.95.229.77',
         'PORT':3306,
         'USER':'root',
-        'PASSWORD':'123456',
+        'PASSWORD':'123',
     }
 }
 

@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>购物车</title>
+<style>
+
+.dv{ border:1px solid black; box-shadow:1px 1px 4px #fefefe; background-color:rgba(255, 255, 255, 0.83); position:absolute; font:500 16px/24px 微软雅黑; border-radius:4px; overflow:hidden; letter-spacing:3px; left:50%; margin-left:-325px; top:100px}
+.close{ width:100%; height:24px; background-color:rgba(185, 188, 192, 0.5); text-align:right; }
+.dv th{ border-bottom:1px dotted black}
+.close:hover{background-color:rgba(30,70,113,0.7) }
+.closeBTN{ position:absolute; height:24px;font:600 14px/24px Verdana, Geneva, sans-serif; letter-spacing:3px; color:#FFF; text-shadow:1px 1px 3px black; right:10px;cursor:pointer}
+.total,.totalSum{ display:inline-block; width:120px; text-align:justify}
+.closeBTN:hover{ color:#FF6}
+.closeBTN:hover:before{ content:"×"}
+.goodsNum{ width:40px; text-align:center;}
+.price{ display:inline-block; width:80px; text-align:justify}
+.price:before,.totalSum:before,.total:before{ content:"￥"}
+.total:after,.totalSum:after{ content:"元"}
+tr:last-child > td{ border-top:1px solid black; background-color:#F0F0F0;margin-left:22px;}
+tr:nth-child(odd){ background-color:rgba(236, 236, 237, 0.6);}
+.del{
+	border:0;
+	background:#AEF6F699;
+	border-radius:10px solid #FC3;
+	margin-left:10px;
+	padding: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 1px solid #61c2d2;
+	border-radius: 3px;
+	}
+.delAll{
+	border:0;
+	background:#A0D2F2;
+	border-radius:10px solid #FC3;
+	margin-left:10px;
+	padding: 3px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border: 1px solid #328f964d;
+	border-radius: 3px;
+	}
+.product{
+	border:0;
+	background:#A3CCE7;
+	border-radius:10px solid #FC3;
+	margin-left:10px;
+	padding: 3px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border: 1px solid #328f9666;
+	border-radius: 3px;
+	color: black;
+	}
+
+.back{
+	height:500px;
+	background:url(img/back.jpg) 0 0 no-repeat;
+	background-size:100% 100%;
+	}
+.back1{
+	opacity:0.5;
+	background-size:100% 99%;
+	position: absolute;
+	top: 80px;
+	height: 500px;
+	box-shadow: bisque;
+	width: 99%;
+	background: white;
+	}
+</style>
+</head>
+<script>
+function closeDIV_FN(e){
+	e.parentNode.style.display="none";	
+}
+var priceList;
+var totalList;
+var numList;
+var oldNumList;
+var goodsNameList;
+var tr;
+window.onload=function(){
+	/*priceList=document.getElementsByClassName("price");
+	totalList=document.getElementsByClassName("total");
+	numList=document.getElementsByClassName("goodsNum");	
+	oldNumList=new Array();
+	for(i=0;i<numList.length;i++){
+		oldNumList[i]=numList.item(i).value;		
+	}
+	countTotal();
+	document.getElementById("totalSum").textContent=0;	*/
+	oldnum();
+	document.getElementById("totalSum").textContent=0;	
+	//countAllTotal();
+}
+function oldnum(){
+		priceList=document.getElementsByClassName("price");
+		totalList=document.getElementsByClassName("total");
+		numList=document.getElementsByClassName("goodsNum");
+		goodsNameList = document.getElementsByName("goodsName");
+		tr=document.getElementsByClassName("on");	
+		oldNumList=new Array();
+		for(i=0;i<numList.length;i++){
+			oldNumList[i]=numList.item(i).value;		
+		}
+		countTotal();
+		countAllTotal();
+	}
+//计算合计金额的方法
+function countAllTotal(){
+	var sum=0.0;
+	for(i=0;i< totalList.length;i++){
+		if(goodsNameList.item(i).checked==true){
+			sum+=parseFloat(totalList[i].textContent);
+		}
+	}
+	document.getElementById("totalSum").textContent=sum;	
+}
+//求每中商品总价的方法
+function countTotal(){
+	for(i=0;i<totalList.length;i++){		
+		totalList.item(i).textContent=(priceList.item(i).textContent*numList.item(i).value).toFixed(2);	
+	}
+}
+//每行数量输入框发生改变调用的方法
+function changeNum(e){
+	if(isNaN(e.value)){
+		e.value=oldNumList[e.id-1];	
+	}else if(e.value<1){
+		e.value=oldNumList[e.id-1];
+	}	
+	oldNumList[e.id-1]=e.value;
+	countTotal();
+	countAllTotal();
+}
+
+function addNum(e){
+	var a=e.getAttribute("data-id");
+	for(i=0;i<numList.length;i++){
+		var idx=goodsNameList.item(i).getAttribute("data-id");
+		if(a==idx){
+			numList[i].value= parseInt(numList[i].value)+1;	
+			changeNum(numList[i]);
+		}
+	}
+}
+
+function subtract(e){
+	var a=e.getAttribute("data-id");
+	for(i=0;i<numList.length;i++){
+		var idx=goodsNameList.item(i).getAttribute("data-id");
+		if(a==idx){
+			numList[i].value= parseInt(numList[i].value)-1;	
+			changeNum(numList[i]);
+		}
+	}
+}
+var j=0;
+
+//全选按钮的操作。
+function selectAll(obj){
+			if(obj.checked){
+				for(i=0;i<goodsNameList.length;i++){
+						goodsNameList.item(i).checked=true;
+						j++;
+					}
+			}else{
+				for(i=0;i<goodsNameList.length;i++){
+						goodsNameList.item(i).checked=false;
+				}
+			}
+			countTotal();
+			countAllTotal();
+		}
+	//验证是否全选所有的商品
+	function goodsName(){
+			var type=true;
+			for(i=0;i<goodsNameList.length;i++){
+				if(!goodsNameList.item(i).checked){
+					j++;
+					type=false;
+					break;
+					}
+				}
+			document.getElementsByName("selectAll").item(0).checked=type;
+			countTotal();
+			countAllTotal();
+		}
+	//单独商品的删除按钮
+	function del(e){
+        for (var i = 0; i < tr.length; i++) {
+            tr[i].onclick = function (e) {
+                var e = e || window.event;
+                var el = e.target || e.srcElement; //通过事件对象的target属性获取触发元素
+                var cls = el.className; //触发元素的class
+                switch (cls) {
+                    case 'del': //点击了删除
+                        var conf = confirm('确定删除此商品吗？');
+                        if (conf) {
+                            this.parentNode.removeChild(this);
+                        }
+                        break;
+					}
+				}
+			}
+	}
+	
+	//批量删除
+	function delAll(){
+		if(j!=0){
+			 var con = confirm('确定删除所选商品吗？'); 
+                if (con) {
+                    for (var i = 0; i < tr.length; i++) {
+                        // 如果被选中，就删除相应的行
+                        if (goodsNameList.item(i).checked==true) {
+                            tr[i].parentNode.removeChild(tr[i]);
+                            i--; //回退下标位置
+                        }
+                    }
+				}
+            } else {
+                alert('请选择商品！');
+            }
+		oldnum();
+		}
+	
+</script>
+<body>
+<div class="box">
+<div class="top"> <img src="img/xiao.png" /></div>
+<div class="back1"></div>
+<div class="back">
+
+<div class="dv" style="clear:both; width:750px; border:1px solid white">
+<span class="closeBTN" onclick="closeDIV_FN(this)">CLOSE</span>
+<div id="closeDIV" class="close" ></div>
+<table width="100%"  cellspacing="1" cellpadding="5px" border="0" cellpadding="0">
+  <tr>
+  	<th><input type="checkbox" name="selectAll"  onchange="selectAll(this)" />全选</th>
+    <th>品名</th>
+    <th>单价</th>
+    <th>数量</th>
+    <th>总价</th>
+    <th>&nbsp;&nbsp;&nbsp;&nbsp;操作&nbsp;&nbsp;&nbsp;</th>
+  </tr>
+  <tr class="on">
+  	<td><input type="checkbox" name="goodsName" onchange="goodsName()"  data-id="1" /></td>
+    <td>nike球鞋</td>
+    <td align="center"><span class="price">73.8</span></td>
+    <td align="center">
+        <button class="numBTN" onclick="subtract(this)"  data-id="1">-</button><input id="1"  value="1" type="text" class="goodsNum" onchange="changeNum(this)"  data-id="1" /><button onclick="addNum(this)" class="numBTN"  data-id="1">+</button>
+    </td>
+    <td align="center"><span class="total"></span></td>
+    <td>&nbsp;&nbsp; <button class="del" onclick="del(this)" data-id="1">删除</button></td>
+  </tr>
+  <tr class="on">
+  	<td><input type="checkbox" name="goodsName" onchange="goodsName()"  data-id="2"  /></td>
+    <td>李宁羽毛球拍</td>
+    <td align="center"><span class="price">526</span></td>
+    <td align="center">
+    	<button class="numBTN" onclick="subtract(this)"  data-id="2">-</button><input id="2" value="1" type="text" class="goodsNum" onchange="changeNum(this)"  data-id="2" /><button onclick="addNum(this)" class="numBTN"  data-id="2">+</button></td>
+    <td align="center"><span class="total"></span></td>
+     <td> &nbsp;&nbsp; <button class="del" onclick="del(this)" data-id="2">删除</button></td>
+  </tr>
+  <tr class="on">
+  	<td><input type="checkbox" name="goodsName" onchange="goodsName()"  data-id="3"   /></td>
+    <td>网球</td>
+    <td align="center"><span class="price">12</span></td>
+    <td align="center">
+    	<button class="numBTN" onclick="subtract(this)" data-id="3" >-</button><input  id="3" value="1" type="text" class="goodsNum" onchange="changeNum(this)" data-id="3"  /><button onclick="addNum(this)" class="numBTN" data-id="3" >+</button>
+    </td>
+    <td align="center"><span class="total"></span></td>
+     <td>&nbsp;&nbsp; <button class="del" onclick="del(this)" data-id="3">删除</button></td>
+  </tr>
+  <tr class="on">
+  	<td><input type="checkbox" name="goodsName" onchange="goodsName()" data-id="4"   /></td>
+    <td>球帽</td>
+    <td align="center"><span class="price">127</span></td>
+    <td align="center">
+    	<button class="numBTN" onclick="subtract(this)" data-id="4">-</button><input id="4" value="1" type="text" class="goodsNum" onchange="changeNum(this)" data-id="4" /><button onclick="addNum(this)" class="numBTN" data-id="4">+</button>
+    </td>
+    <td align="center"><span class="total"></span></td>
+     <td>&nbsp;&nbsp; <button class="del" onclick="del(this)" data-id="4" >删除</button></td>
+  </tr>
+  <tr>
+  <td colspan="6" align="center">合计：<span class="totalSum" id="totalSum"></span></td>
+  </tr>
+  <tr>
+   <td colspan="3"><button onclick="delAll()" class="delAll">批量删除</button></td>
+  	<td colspan="3"><button class="product" disabled="disabled">生产订单</button></td>
+  </tr>
+</table>
+
+</div>
+</div>
+</div>
+</body>
+</html>

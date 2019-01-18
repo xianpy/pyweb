@@ -11,6 +11,7 @@ from axf.views_helper import total_price
 
 # 主页视图函数
 def home(request):
+    return render(request, 'axf/index.html', locals())
     wheelsList = Wheel.objects.all()
     navList = Nav.objects.all()
     mustbuyList = Mustbuy.objects.all()
@@ -26,7 +27,7 @@ def home(request):
 # categoryid参数代表大种类标识；cid代表小种类标识，sortcode代表排序码
 def  market(request):
 
-    return render(request,'axf/market.html',locals())
+    return render(request,'axf/cart.html',locals())
 def market1(request,foodtypeid,childtypeid,sortcode):
     leftSlider = Foodtypes.objects.all()
     if childtypeid == '0':
