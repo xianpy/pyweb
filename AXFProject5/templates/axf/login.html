@@ -16,14 +16,14 @@
 			<ul class="toolbar_content_left">
 				<li><span>您好，</span>欢迎来到良品铺子官方商城！</li>
 				<li><a href=""></a></li>
-				<li><a href="register.html">[注册]</a></li>
+				<li><a href="{% url 'axf:register' %}">[注册]</a></li>
 				<li><a href="">支付宝快捷登录</a></li>
 				<li><a href="">qq登录</a></li>
 				<li><a href="">微博登录</a></li>
 			</ul>
 			<ul class="toolbar_content_right">
 				<li class="attention_li">
-					<a href="">关注良品<i class="arrow"></i></a> 
+					<a href="">关注良品<i class="arrow"></i></a>
 					<div class="attention">
 						<div class="wb">
 							<div class="wb-tit">
@@ -57,42 +57,48 @@
 		</a>
 		<h1>欢迎登录</h1>
 	</div>
-	<!--login-->	
+	<!--login-->
 	<div class="login clear_float">
 		<div class="login_left">
 			<img src="{%  static 'images/img_login/ad.png'%}" alt="" />
 		</div>
-		<div class="login_right">
-			<div class="tit">
-				<h3>会员登录</h3>
-				<p>新用户，<a href="">免费注册&gt</a></p>
-			</div>
-			<span class='reg_tip'></span>
-			<p>用户名</p>
-			<input type="text" class="login_username"/>
-			<p>密码</p>
-			<input type="password" class="login_userpass"/>
-			<a href="" class="forget_pwd">忘记密码？</a>
-			<a href="">已有会员卡，我要激活</a>
-			<a href="javascript:;" class="login_btn">登 录</a>
-			<div class="other_login clear_float">
-				<p>使用合作网站账号登录良品铺子：</p>
-				<ul class="toolbar_content_left">
-					<li></li>
-					<li></li>
-					<li></li>
-					<li><a href="">支付宝快捷登录</a></li>
-					<li><a href="">qq登录</a></li>
-					<li><a href="">微博登录</a></li>
-				</ul>
-			</div>
+
+        <h3 style="color:red;text-align: center;font-size: 25px">{{ msg }}</h3>
+
+        <form action="{% url 'axf:login' %}" method="post">
+            {% csrf_token %}
+            <div class="login_right">
+                <div class="tit">
+                    <h3>会员登录</h3>
+                    <p>新用户，<a href="{% url 'axf:register' %}">免费注册&gt</a></p>
+                </div>
+                <span class='reg_tip'></span>
+                <p>用户名</p>
+                <input type="text" class="login_username" name="login_username"/>
+                <p>密码</p>
+                <input type="password" class="login_userpass" name="login_userpass"/>
+                <a href="" class="forget_pwd">忘记密码？</a>
+                <a href="">已有会员卡，我要激活</a>
+                <input type="submit" class="login_btn" value="登 录">
+                <div class="other_login clear_float">
+                    <p>使用合作网站账号登录良品铺子：</p>
+                    <ul class="toolbar_content_left">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li><a href="">支付宝快捷登录</a></li>
+                        <li><a href="">qq登录</a></li>
+                        <li><a href="">微博登录</a></li>
+                    </ul>
+			    </div>
 			<div class="login_bottom_code">
 				<p>良品微信商城，手机专属享优惠</p>
 				<img src="images/img_login/code.png" alt="" class="login_bottom_code_pointer" />
 				<img src="images/img_index/dz_qrcode.jpg" class="login_bottom_code_pointer_img"/>
 			</div>
-		</div>
-	</div>
+		    </div>
+        </form>
+    </div>
 	<!-- footer -->
 	<div class="footer">
 		<div class="foot_area">

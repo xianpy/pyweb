@@ -79,47 +79,50 @@ def mine(request):
     return render(request,'axf/mine.html',locals())
 
 
+# index 页面
+def My_mian(request):
+    return render(request,'axf/index.html')
+
+# 注册
 def register(request):
-    return render(request, 'axf/register.html')
-    if request.method == "GET":
+    if request.method == 'GET':
         return render(request,'axf/register.html')
-    elif request.method == "POST":
-        userAccount = request.POST.get("userAccount")  # 接收提交的POST数据
-        userPass = request.POST.get("userPass")
-        userPhone = request.POST.get("userPhone")
-        userAddress = request.POST.get("userAddress")
-        userImg = request.FILES.get("userImg")  # 接收二进制图片
-        print("userImg.name=",userImg.name)
-        userImg.name = str(int(time.time()*10000)) + userImg.name  # 重新设定图片名称
-        new_user = User()
-        new_user.username = userAccount
+    elif request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        tel = request.POST.get('phone_num')
+
         md5 = hashlib.md5()
-        md5.update(userPass.encode("utf-8"))
-        new_user.password = md5.hexdigest()
-        new_user.tel = userPhone
-        new_user.address = userAddress
-        new_user.icon = userImg  # 将图片对象与用户对象关联
-        new_user.save()
-        return redirect(reverse("axf:login"))
+        md5.update(password.encode('utf-8'))
+        password = md5.hexdigest()
 
+        user = User.objects.create(username=username,password=password,tel=tel)
+        return redirect(reverse('axf:index'))
 
-def login(request):   # 登录
-    if request.method == "GET":
+# 登录
+def login(request):
+    if request.method == 'GET':
         return render(request,'axf/login.html')
-    elif request.method == "POST":
-        loginname = request.POST.get("loginname")
-        loginpwd = request.POST.get("loginpwd")
+    elif request.method == 'POST':
+        login_username = request.POST.get('login_username')
+        login_password = request.POST.get('login_userpass')
+
         md5 = hashlib.md5()
-        md5.update(loginpwd.encode("utf-8"))
-        loginpwd = md5.hexdigest()
-        users = User.objects.filter(username=loginname,password=loginpwd)
+        md5.update(login_password.encode('utf-8'))
+        login_password = md5.hexdigest()
+
+        users = User.objects.filter(username=login_username,password=login_password)
         if users:
             user = users.first()
-            request.session["user_id"] = user.id  # 登录成功后，设置session属性
-
-            return redirect(reverse("axf:mine"))
+            request.session['user_id'] = user.id
+            return redirect(reverse('axf:index'))
         else:
-            return redirect(reverse("axf:login"))
+            return redirect(reverse("axf:wronglogin",kwargs={'username':login_username,'password':login_password}))
+
+# 登录密码账号不对
+def go_login_withwrong(request,username,password):
+    msg = "用户名或密码错误，请重新输入"
+    return render(request, 'axf/login.html',locals())
 
 
 def logout(request):

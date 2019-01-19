@@ -11,8 +11,13 @@ urlpatterns = [
     path('market/', views.market,name="market"),
     path('market1/<foodtypeid>/<childtypeid>/<sortcode>/',views.market1,name="market1"),
     path('mine/',views.mine,name="mine"),
-    path('register/',views.register,name="register"),
-    path('login/',views.login,name="login"),
+
+
+    path('index/',views.My_mian,name='index'),    # index页面
+    path('register/',views.register,name="register"),  # 注册
+    path('login/',views.login,name="login"),  # 登录
+    path('wronglogin/<username>/<password>/', views.go_login_withwrong, name="wronglogin"),  # 登录失败
+
     path('logout/',views.logout,name="logout"),
     path('gocart/',views.gocart,name="gocart"),
     path('addshop/',views.addShopping),
