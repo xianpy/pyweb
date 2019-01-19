@@ -7,7 +7,7 @@ app_name = 'axf'
 
 
 urlpatterns = [
-    url('home/',views.home,name='home'),
+
     path('market/', views.market,name="market"),
     path('market1/<foodtypeid>/<childtypeid>/<sortcode>/',views.market1,name="market1"),
     path('mine/',views.mine,name="mine"),
@@ -22,4 +22,5 @@ urlpatterns = [
     path("makeorders/",views.make_order),
     path("orderdetail/",views.order_detail),
     path("pay/",views.pay),
+    url('', views.home, name='home'),
 ]

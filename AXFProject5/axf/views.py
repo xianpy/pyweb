@@ -80,6 +80,7 @@ def mine(request):
 
 
 def register(request):
+    return render(request, 'axf/register.html')
     if request.method == "GET":
         return render(request,'axf/register.html')
     elif request.method == "POST":
@@ -127,6 +128,7 @@ def logout(request):
 
 # 进入购物车
 def gocart(request):
+    return render(request, 'axf/cart.html', locals())
     carts = Cart.objects.filter(user=request.user)
     select_all_flag = not Cart.objects.filter(user=request.user,ischoose=False).exists() # 是否全部选中购物车记录，若购物车全选，则返回True
     totalPrice = total_price(request)  # 计算总价

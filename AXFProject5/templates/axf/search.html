@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +8,10 @@
 	<meta name="Keywords" content="网上商城,休闲零食，美食，牛肉干，鱼干，果干果脯，糕点糖果，素食山珍，茶水饮料，进口食品，礼盒，良品铺子">
 </head>
 
-<link rel="stylesheet" type="text/css" href="css/public.css">
-<link rel="stylesheet" type="text/css" href="css/index.css">
-<link rel="stylesheet" type="text/css" href="css/shop.css">
-<link rel="stylesheet" type="text/css" href="css/search.css"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/public.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/shop.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/search.css'%}"/>
 <body>
 	<!-- toolbar -->
 	<div class="toolbar">
@@ -399,9 +400,9 @@
 
 </body>
 </html>
-<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="js/cookieTools.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="{% static 'js/jquery-1.8.3.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/cookieTools.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/public.js'%}"></script>
 <script type="text/javascript">
 $(function(){
 	InitTopUI(); 

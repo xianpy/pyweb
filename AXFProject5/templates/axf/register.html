@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,9 @@
 	<meta name="description" content="良品铺子LPPZ.COM-专业的休闲食品网上购物商城，在线销售肉脯鱼干、果干果脯、糕点糖果、素食山珍、茶水饮料、进口食品、礼盒等数百种优质食品。便捷、诚信的服务，为您提供愉悦的休闲食品网上购物体验! ">
 	<meta name="Keywords" content="网上商城,休闲零食，美食，牛肉干，鱼干，果干果脯，糕点糖果，素食山珍，茶水饮料，进口食品，礼盒，良品铺子">
 </head>
-<link rel="stylesheet" href="css/public.css" />
-<link rel="stylesheet" href="css/login.css" />
-<link rel="stylesheet" href="css/register.css" />
+<link rel="stylesheet" href="{% static 'css/public.css'%}" />
+<link rel="stylesheet" href="{% static 'css/login.css'%}" />
+<link rel="stylesheet" href="{% static 'css/register.css'%}" />
 <body>
 	<!-- toolbar -->
 	<div class="toolbar">
@@ -60,7 +61,7 @@
 	<!--login-->	
 	<div class="login clear_float">
 		<div class="login_left">
-			<img src="images/img_register/ad2.jpg" alt="" />
+			<img src="{%  static 'images/img_register/ad2.jpg'%}" alt="" />
 		</div>
 		<div class="login_right">
 			<div class="tit">
@@ -130,9 +131,9 @@
 	</div>
 </body>
 </html>
-<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="js/cookieTools.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="{% static 'js/jquery-1.8.3.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/cookieTools.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/public.js'%}"></script>
 <script type="text/javascript">
 $(function(){
 	//关注良品显示隐藏

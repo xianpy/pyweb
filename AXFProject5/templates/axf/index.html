@@ -18,8 +18,8 @@
 			<!--未登录的显示-->
 			<ul class="toolbar_content_left">
 				<li>欢迎来到良品铺子官方商城！</li>
-				<li><a href="login.html">[登录]<span></span></a></li>
-				<li><a href="register.html">[注册]</a></li>
+				<li><a href="{%  url 'axf:login' %}">[登录]<span></span></a></li>
+				<li><a href="{%  url 'axf:register' %}">[注册]</a></li>
 				<li><a href="">支付宝快捷登录</a></li>
 				<li><a href="">qq登录</a></li>
 				<li><a href="">微博登录</a></li>
@@ -164,11 +164,11 @@
 			<div class="banner">
 				<div class="swiper-container">
 				    <div class="swiper-wrapper">
-				        <div class="swiper-slide"><img src="images/img_index/banner_01.jpg" alt=""></div>
-				        <div class="swiper-slide"><img src="images/img_index/banner_02.jpg" alt=""></div>
-				        <div class="swiper-slide"><img src="images/img_index/banner_03.jpg" alt=""></div>
-						<div class="swiper-slide"><img src="images/img_index/banner_04.jpg" alt=""></div>
-						<div class="swiper-slide"><img src="images/img_index/banner_05.jpg" alt=""></div> 
+				        <div class="swiper-slide"><img src="{% static 'images/img_index/banner_01.jpg' %}" alt=""></div>
+				        <div class="swiper-slide"><img src="{% static 'images/img_index/banner_02.jpg' %}" alt=""></div>
+				        <div class="swiper-slide"><img src="{% static 'images/img_index/banner_03.jpg' %}" alt=""></div>
+						<div class="swiper-slide"><img src="{% static 'images/img_index/banner_04.jpg' %}" alt=""></div>
+						<div class="swiper-slide"><img src="{% static 'images/img_index/banner_05.jpg' %}" alt=""></div>
 				    </div>
 			   		<!-- 分页器 -->
 			    	 <div class="swiper-pagination"></div>
