@@ -1,0 +1,521 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>素食山珍-良品铺子官方商城-休闲零食网购首选（LPPZ.COM）- 品质保障、配送及时、放心服务、轻松购物!</title>
+	<meta name="description" content="良品铺子LPPZ.COM-专业的休闲食品网上购物商城，在线销售肉脯鱼干、果干果脯、糕点糖果、素食山珍、茶水饮料、进口食品、礼盒等数百种优质食品。便捷、诚信的服务，为您提供愉悦的休闲食品网上购物体验! ">
+	<meta name="Keywords" content="网上商城,休闲零食，美食，牛肉干，鱼干，果干果脯，糕点糖果，素食山珍，茶水饮料，进口食品，礼盒，良品铺子">
+</head>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/public.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/shop.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/search.css'%}"/>
+<body>
+	<!-- toolbar -->
+	<div class="toolbar">
+		<div class="toolbar_content wide">
+			<ul class="toolbar_content_left">
+				<li>欢迎来到良品铺子官方商城！</li>
+				<li><a href="login.html">[登录]<span></span></a></li>
+				<li><a href="register.html">[注册]</a></li>
+				<li><a href="">支付宝快捷登录</a></li>
+				<li><a href="">qq登录</a></li>
+				<li><a href="">微博登录</a></li>
+			</ul>
+			<!--登录的显示-->
+			<div class="toolbar_content_left_logined">
+				<p>
+					<span>您好</span>
+					<a href="" class="toolbar_username"></a>
+					<span>,</span>
+				</p>
+				<p>欢迎来到良品铺子官方商城！</p>
+				<a href="javascript:;" class="toolbar_quit">[退出]</a>
+			</div>
+			<ul class="toolbar_content_right">
+				<li class="myInfo_li">
+					<a href="" class="myInfo ">我的良品<i class="arrow"></i></a>
+					<div class="myInfo_hover">
+						<div class="myInfo_top">
+							<div class="user_head">
+								<a href=""><img src="images/img_index/avatar.png" alt=""></a>
+							</div>
+							<a href="">您好，请登录</a>
+						</div>
+						<ul class="myInfo_mid">
+							<li><a href="">我的订单</a></li>
+							<li><a href="">我的关注</a></li>
+							<li><a href="">我的优惠券</a></li>
+							<li><a href="">我的积分</a></li>
+							<li><a href="">签到有好礼</a></li>
+							<li><a href="">购物指南</a></li>
+						</ul>
+						<div class="myInfo_bottom">
+							<p>最近浏览 <span><a href="" style="color:#555">更多></a></span></p>
+						</div>
+					</div>
+				</li>
+				<li class="attention_li">
+					<a href="">关注良品</a>
+					<div class="attention">
+						<div class="wb">
+							<div class="wb-tit">
+								关注微博
+							</div>
+							<div class="wb-plus">
+								<iframe src="http://widget.weibo.com/relationship/followbutton.php?btn=red&style=2&uid=1851770484&width=136&height=24&language=zh_cn" width="136" height="24" scrolling="no" frameborder="0"></iframe>
+							</div>
+						</div>
+						<div class="attention_mid">
+							<img src="images/img_index/dz_qrcode.jpg" alt="">
+						</div>
+						<div class="attention_bottom">
+							<img src="images/img_index/weixin.png" alt="">
+							<div>
+								<p>微信扫一扫</p>
+								<p>优惠随身携带!</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li><a href="">官方网站</a></li>
+				<li><p><span class="tel_img"></span>全国订购热线：<span class="tel_num">400-1177-517</span></p></li>
+			</ul>
+		</div>
+	</div>
+	<!-- header -->
+	<div class="header clear_float">
+		<div class="header_main">
+			<div class="main_logo">
+				<a href="index.html">良品铺子-BESTORE</a>
+			</div>
+			<div class="main_search">
+				<div class="search_box">
+					<p>
+						热门搜索：
+						<a href=""><span>松子</span></a> 
+						<a href="">牛肉</a>
+						<a href="">开心果</a>
+						<a href="">核桃</a>
+						<a href="">话梅</a>
+						<a href="">花生瓜子</a>
+					</p>
+					<input class="search_bar" type="input" placeholder="商品搜索" /><input class="search_btn" type="button">
+				</div>
+			</div>
+			<div class="main_buy">
+				<a href="javascript:;" class="go_cart">购物车</a>
+				<span class="buy_num"><b>0</b></span>
+				<div class="buy_show">
+					<p>最近加入的商品</p>
+					<table>
+						<tbody>
+							
+						</tbody>
+					</table>
+					<div class="buy_show_bottom">
+						<div class="buy_right clear_float">
+							<p>共计<span class="cart_shop_count">0</span>件商品，共计<span>¥<b class="cart_shop_money">0.00</b></span></p>
+							<a href="javascript:;" class="go_cart">去购物车结算</a>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="shop_menu">
+			<div class="menu_center">
+				<a href="index.html">首页</a>
+				<a href="">上新尝鲜</a>
+			</div>
+		</div>
+	</div>
+	<!--search_cont-->
+	<div class="search_cont clear_float">
+		<div class="search_tit">
+			<div class="src_list">
+				<a href="">首页<span>&gt;</span></a>
+				<a href="">素食山珍</a>
+			</div>
+			<div class="src_list_child">
+				<p>子分类：</p>
+				<a href="">其他山珍</a>
+				<a href="">笋菌海带</a>
+				<a href="">美味豆干</a>
+			</div>
+		</div>
+		<div class="search_choose">
+			<div class="choose_tit">
+				<h3><b>素食山珍</b>商品筛选</h3>
+				<p>共<span class="all_shop_count">21</span>个商品</p>
+			</div>
+			<ul class="choose_item">
+				<li>
+					<p>品牌：</p>
+					<a href="">良品铺子</a>
+				</li>
+				<li>
+					<p>包装形式：</p>
+					<a href="">散装</a>
+					<a href="">盒装</a>
+					<a href="">罐装</a>
+					<a href="">瓶装</a>
+					<a href="">礼盒装</a>
+					<a href="">趣味装</a>
+					<a href="">手抓包</a>
+					<a href="">小袋装</a>
+					<a href="">大袋装</a>
+					<a href="">单粒装</a>
+					<a href="">单个装</a>
+					<a href="">中袋装</a>
+				</li>
+				<li>
+					<p>产源：</p>
+					<a href="">国产</a>
+					<a href="">原装进口</a>
+					<a href="">国外原料国内分装</a>
+				</li>
+				<li>
+					<p>价格：</p>
+					<a href="">9.9元以下</a>
+					<a href="">10-19.9元</a>
+					<a href="">20-29.9元</a>
+					<a href="">30-50元</a>
+					<a href="">50-100元</a>
+					<a href="">100元以上</a>
+				</li>
+			</ul>
+			<div class="choose_sort">
+				<p>排序：</p>
+				<a href="" class="focus_choose">综合排序</a>
+				<a href="">销量</a>
+				<a href="">价格</a>
+				<a href="">评分</a>
+				<input type="checkbox" />
+				<p>仅显示有货的</p>
+			</div>
+		</div>
+		<!--商品列表-->
+		<ul class="search_shop_list clear_float">
+			
+		</ul>
+		<div class="pages">
+			<ul class="pages_list">
+				<li><span class="pages_prev">上页</span></li>
+				<li><span class="pages_current">1</span></li>
+				<li><a href="">2</a></li>
+				<li><a href="" class="pages_next">下页</a></li>
+				<li>
+					<small class="pages_sum">共<b>2</b>页</small>
+					<i>到第</i>
+					<input class="pages_txt" type="text" value="1" />
+					<i>页</i>
+					<input class="pages_btn" type="button" value="确认" />
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div class="footer">
+		<div class="foot_service">
+			<ul>
+				<li>
+					<em>100%</em>
+					<p>正品保证</p>
+				</li>
+				<li>
+					<em>10天</em>
+					<p>无理由退换货</p>
+				</li>
+				<li>
+					<em>满68元</em>
+					<p>全场包邮</p>
+				</li>
+				<li>
+					<em>积分抵现金</em>
+					<p>100积分=1元</p>
+				</li>
+				<li>
+					<em>开箱验货</em>
+					<p>先验货再签收</p>
+				</li>
+				<li>
+					<em>多仓就近发货</em>
+					<p>快速直达</p>
+				</li>
+			</ul>
+		</div>
+		<div class="foot_area">
+			<div class="foot_cont">
+				<div class="fc_contact">
+					<div class="ctt_icon">
+						热线
+					</div>
+					<div class="ctt_txt">
+						<p>
+							<strong>400-1177-517</strong>
+						</p>
+						<p>
+							良品铺子客服热线<br/>
+							周一至周日：9:00-22:00
+						</p>
+						<p>
+							招商热线<br/>
+							400-1177-517
+						</p>
+					</div>
+				</div>
+				<div class="fc_link">
+					<dl>
+						<dt><strong>购物指南</strong></dt>
+						<dd>
+							<a href="">安全账户</a>
+							<a href="">购物流程</a>
+							<a href="">老顾客重置密码</a>
+							<a href="">生日礼物流程</a>
+							<a href="">找回密码</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><strong>物流配送</strong></dt>
+						<dd>
+							<a href="">配送说明</a>
+							<a href="">签收与验货</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><strong>付款说明</strong></dt>
+						<dd>
+							<a href="">发票制度</a>
+							<a href="">公司转账</a>
+							<a href="">在线支付</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><strong>客户服务</strong></dt>
+						<dd>
+							<a href="">退换货服务</a>
+							<a href="">联系我们</a>
+							<a href="">退款说明</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><strong>会员专区</strong></dt>
+						<dd>
+							<a href="">优惠券使用规则</a>
+							<a href="">积分制度</a>
+							<a href="">会员须知</a>
+						</dd>
+					</dl>
+				</div>
+				<div class="fc_follow">
+					<div class="qr_code">
+						<div class="qr_code_top">
+							<img src="images/img_index/dz_qrcode.jpg" alt="">
+						</div>						
+						<span>微信二维码</span>
+					</div>
+					<div class="weibo_mail">
+							<p>微博关注</p>
+							<iframe src="http://widget.weibo.com/relationship/followbutton.php?btn=red&style=2&uid=1851770484&width=136&height=24&language=zh_cn" width="136" height="24" scrolling="no" frameborder="0"></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="foot_nav">
+				<ul>
+					<li><a href="">关于我们</a></li>
+					<li><a href="">联系我们</a></li>
+					<li><a href="">客户服务</a></li>
+					<li><a href="">诚聘英才</a></li>
+					<li><a href="">商务合作</a></li>
+					<li><a href="">媒体报道</a></li>
+					<li><a href="">网站地图</a></li>
+					<li><a href="">站长招募</a></li>
+				</ul>
+			</div>
+			<div class="foot_copyright">
+				Copyright@2006-2017 湖北良品铺子电子商务有限公司 All rights Reserved<br/>
+				<a href="">鄂ICP备15022981号</a><br/>
+				<a href="">
+					<img src="images/img_index/gslogo.png" alt="">
+				</a>
+
+			</div>
+		</div>
+	</div>
+	<!-- 右侧边栏 -->
+	<div class="right_navbar">
+		<ul class="rnb_list">
+			<li class="kf">
+				<a href="" class="hvr">
+					<span>客服咨询</span>
+					<i class="icon"></i>
+				</a>
+			</li>
+			<li class="gw">
+				<a href="javascript:;" class="go_cart">
+					<i class="icon"></i>
+					<span>购物车</span>
+					<small class="sum">0</small>
+				</a>
+			</li>
+			<li class="hy">
+				<a href="" class="hvr">
+					<span>会员中心</span>
+					<i class="icon"></i>
+				</a>
+			</li>
+			<li class="yh">
+				<a href="" class="hvr">
+					<span>我的优惠券</span>
+					<i class="icon"></i>
+				</a>
+			</li>
+			<li class="sc">
+				<a href="" class="hvr">
+					<span>我的关注</span>
+					<i class="icon"></i>
+				</a>
+			</li>
+		</ul>
+		<ul class="rnb_link">
+			<li class="qr" id="qr_cust">
+				<a href="">
+					<i class="icon"></i>
+					<div class="cust" id="qr_cust_display">
+						<img src="images/img_index/dz_qrcode.jpg" alt="">
+					</div>
+				</a>
+			</li>
+			<li class="goback">
+				<a href="javascript:void(0)" class="hvr">
+					<span>返回顶部</span>
+					<i class="icon"></i>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>
+<script type="text/javascript" src="{% static 'js/jquery-1.8.3.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/cookieTools.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/public.js'%}"></script>
+<script type="text/javascript">
+$(function(){
+	InitTopUI(); 
+	InitRightUI();
+	login_cookie();
+	//获取商品数据，动态生成商品列表，增加添加到购物车的点击事件
+	getGoods().then(makeGoodsData).then(addToCart);
+	//获取购物车数据
+	let p=updateCartCount();
+	//如果获取成功
+	if(p!=null){
+		//动态创建购物车商品列表，更新数量和总价，删除按钮的事件注册
+		p.then(setCartList).then(setTopCartCount).then(delete_event);
+	}
+	//链接购物车
+	$(".go_cart").click(function(){
+		if(getCookie("userName")==null){
+			alert("请先登录");
+			location="login.html";
+		}else{
+			location="cart.html";
+		}
+	});
+	
+});
+
+//获取商品数据
+function getGoods(){
+	let p=new Promise(function(resolve,reject){
+		$.ajax({
+			type:"get",
+			url:"php/getGoodsList.php",
+			async:true,
+			success:function(msg){
+				resolve(msg);
+			}
+		});
+	});
+	return p;
+}
+//通过商品数据动态生成商品列表
+function makeGoodsData(goods_list){
+	let goods_list_arr=eval(goods_list);
+	//商品数量
+	$(".all_shop_count").text(goods_list_arr.length);
+	//动态创建商品
+	for(let i=0; i<goods_list_arr.length; i++){
+		//每个商品的li
+		$li_goods_li=$('<li goodsId='+goods_list_arr[i].goodsId+'></li>');
+		 //图片
+		$li_goods_img=$("<img/>");
+		$li_goods_img.prop("src",goods_list_arr[i].goodsImg); //图片
+		//名称
+		$li_goods_nameA=$('<a href="shop.html" class="link_shop"></a>');
+		$li_goods_nameA.text(goods_list_arr[i].goodsName);//名称
+		//描述
+		$li_goods_descP=$("<p></p>");
+		$li_goods_descP.text(goods_list_arr[i].goodsDesc);//描述
+		//价格
+		let goodsPrices=goods_list_arr[i].goodsPrice.split(".");
+		$li_goods_priceS=$("<span>¥<i>"+goodsPrices[0]+"</i>."+goodsPrices[1]+"</span>");//价格
+		//加入购物车
+		$li_goods_cart=$('<div class="cart"><a href="javascript:;" class="add_to_cart">加购物车<input type="hidden" value="'+goods_list_arr[i].goodsId+'"/></a><a href="" class="add_to_metion">加关注</a></div>');
+		//已售
+		$li_goods_shop_score=$('<div class="shop_score clear_float"><p>已售：</p><p>'+goods_list_arr[i].goodsCount+'<p><div class="star"><p>评分：</p><i></i></div></div>');
+		//放入li
+		$li_goods_li.append($li_goods_img,$li_goods_nameA,$li_goods_descP,$li_goods_priceS,$li_goods_cart,$li_goods_shop_score);
+		$(".search_shop_list").append($li_goods_li);
+	}
+	var p = new Promise(function(resolve,reject){
+		resolve();
+	});
+	return p;
+}
+//注册添加到购物车事件
+function addToCart(){
+	$add_to_carts=$(".add_to_cart");
+	$link_shop=$(".link_shop");
+	for(let i=0; i<$add_to_carts.length; i++){
+		$($add_to_carts[i]).click(function(){
+			if(getCookie("userName"==null)){
+				alert("请先登录！");
+				location.href="login.html";
+			}else{
+				$(".buy_show tbody").empty();
+				$.ajax({
+					type:"get",
+					url:"php/addShoppingCart.php",
+					async:true,
+					data:{
+						"vipName":getCookie("userName"),
+						"goodsId":$($add_to_carts[i]).children("input").val(),
+						"goodsCount":1
+					},
+					success:function(msg){
+						if(msg==1){
+							$(".buy_num b").text(parseInt($(".buy_num b").text())+1);
+							$(".gw .sum").text(parseInt($(".gw .sum").text())+1);
+							updateCartCount().then(setCartList).then(setTopCartCount).then(delete_event);
+							alert("加入购物车成功");
+						}else{
+							alert("加入购物车失败，请稍后再试");
+						}
+					}
+				});
+			}
+		});
+	}
+	$link_shop.click(function(){
+		addCookie("goodsId",$(this).parents("li").attr("goodsId"),7);
+	});
+}
+
+
+
+</script>

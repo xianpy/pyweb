@@ -1,0 +1,440 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<script charset="utf-8" src="https://tag.baidu.com/vcard/v.js?siteid=5242374&amp;url=http%3A%2F%2Flppz.winguo.com%2Fcustomer%2Forder%2F&amp;source=&amp;rnd=556728939&amp;hm=1"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>全部订单 - 会员中心  </title>
+<link href="http://css.winguo.com/themes/www/css/shop-head-v2.css?v=3.4.31" type="text/css" rel="stylesheet">
+<link href="http://css.winguo.com/themes/creater/css/userCenter/css/userCenter-global.css?v=3.4.31" type="text/css" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'css/public.css' %}">
+
+<script type="text/javascript" src="http://js.winguo.com/jScripts/global/jQuery.js"></script>
+<script type="text/javascript">
+if(typeof(SEARCH_IMG_HOST) == "undefined" && typeof(REPLACE_IMG_HOST) == "undefined")
+{
+	var SEARCH_IMG_HOST="http://g1.img.winguo.com";
+	var SEARCH_WINGUO_IMG_HOST="http://g1.img.winguo.com";
+	var REPLACE_IMG_HOST="http://img.winguo.com";
+}
+var loginExec = '1';
+</script>
+<script type="text/javascript"  src="http://js.winguo.com/jScripts/creater/base.js?v=3.4.31"></script>
+<script type="text/javascript"  src="http://js.winguo.com/jScripts/mall/usercenter/bind.js?v=3.4.31"></script>
+
+	<link href="http://css.winguo.com/themes/userCenter/css/per-info-man.css?v=3.4.31" type="text/css" rel="stylesheet" />
+	<script type="text/javascript"  src="http://js.winguo.com/jScripts/creater/base.js?v=3.4.31"></script>
+	<script type="text/javascript" src="http://js.winguo.com/jScripts/global/jQuery.jCarousel.min.js?v=3.4.31"></script>
+	<script type="text/javascript" src="http://js.winguo.com/jScripts/mall/usercenter/jcarousel.js?v=3.4.31"></script>
+{% block linkscript %}
+{% endblock linkscript %}
+<style type="text/css">
+.sitesearch .logo .site_logo {float:left;width:175px;height:56px;background:url('http://css.winguo.com/themes/www/image/global/logo_v1_175x56.png') no-repeat;text-indent:-9999px;}
+</style>
+</head>
+
+
+<body>
+
+<div class="toolbar">
+		<div class="toolbar_content wide">
+			<div class="toolbar_content_left_logined">
+				<p>
+					<span>您好</span>
+					<a href="" class="toolbar_username"></a>
+					<span>,</span>
+				</p>
+				<p>欢迎来到良品铺子官方商城！</p>
+				<a href="{% url 'axf:logout' %}" class="toolbar_quit">[退出]</a>
+			</div>
+			<ul class="toolbar_content_right">
+				<li class="myInfo_li">
+					<a href="{% url 'axf:centre' %}" class="myInfo ">我的良品<i class="arrow"></i></a>
+					<div class="myInfo_hover">
+						<div class="myInfo_top">
+							<div class="user_head">
+								<a href=""><img src="" alt=""></a>
+							</div>
+							<p>{{ username }}</p>
+						</div>
+						<ul class="myInfo_mid">
+							<li><a href="">我的订单</a></li>
+							<li><a href="">我的关注</a></li>
+							<li><a href="">我的优惠券</a></li>
+							<li><a href="">我的积分</a></li>
+							<li><a href="">签到有好礼</a></li>
+							<li><a href="">购物指南</a></li>
+						</ul>
+						<div class="myInfo_bottom">
+							<p>最近浏览 <span><a href="" style="color:#555">更多></a></span></p>
+						</div>
+					</div>
+				</li>
+				<li class="attention_li">
+					<a href="">关注良品</a>
+					<div class="attention">
+						<div class="wb">
+							<div class="wb-tit">
+								关注微博
+							</div>
+							<div class="wb-plus">
+								<iframe src="http://widget.weibo.com/relationship/followbutton.php?btn=red&style=2&uid=1851770484&width=136&height=24&language=zh_cn" width="136" height="24" scrolling="no" frameborder="0"></iframe>
+							</div>
+						</div>
+						<div class="attention_mid">
+							<img src="images/img_index/dz_qrcode.jpg" alt="">
+						</div>
+						<div class="attention_bottom">
+							<img src="images/img_index/weixin.png" alt="">
+							<div>
+								<p>微信扫一扫</p>
+								<p>优惠随身携带!</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li><a href="">官方网站</a></li>
+				<li><p><span class="tel_img"></span>全国订购热线：<span class="tel_num">400-1177-517</span></p></li>
+				<li><a href="">在线客服 <i class="chat"></i></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- header -->
+	<div class="header clear_float">
+		<div class="header_main">
+			<div class="main_logo">
+				<a href="#">良品铺子-BESTORE</a>
+			</div>
+			<div class="main_search">
+				<div class="search_box">
+					<p>
+						热门搜索：
+						<a href=""><span>松子</span></a>
+						<a href="">牛肉</a>
+						<a href="">开心果</a>
+						<a href="">核桃</a>
+						<a href="">话梅</a>
+						<a href="">花生瓜子</a>
+					</p>
+					<input class="search_bar" type="input" placeholder="商品搜索" /><input class="search_btn" type="button">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% block base %}
+<div id="content" class="content">
+	<div class="wPage">
+    	<div class="cls">
+            <div class="LayoutCenter">
+                <div class="LayoutWrap">
+                	<!--个人信息-->
+                	<div id="userinfo">
+					    <div class="user-img">
+							<a href="">
+								<img src="" style="width:122px;height:122px;">
+							</a>
+						</div>
+                    	<div class="user-name"><a href="#" class="name">{{ username }}</a></div>
+                    	<div class="my-shop">
+                        	<div class="shopping-info list-1">
+                                <span class="shop-over">余额&#40;元&#41;&#58;<em>0.00</em></span>
+                                <span class="shop-integ">积分&#58;<em>0</em></span>
+                                                            </div>
+                            <div class="shopping-info list-2">
+                            	<span class="to-pay">待付款&#91;<a href="" target="_blank">0</a>&#93;</span>
+                                <span class="to-sure">待收货&#91;<a href="" target="_blank">0</a>&#93;</span>
+                                <span class="to-replay">待评价&#91;<a href="" target="_blank">0</a>&#93;</span>
+                            </div>
+                            <div class="shopping-info list-3">
+                            	<a href="{% url 'axf:site' %}" class="address">&#91;收货地址管理&#93;</a>
+                                <a href="" class="information">&#91;修改资料&#93;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--个人信息-->
+                	<div id="n_order">
+                    	<div class="title"><p>近一个月订单</p></div>
+                    	<table class="ord-list">
+                        <tr><td colspan="7"><center>暂无订单</center></td></tr>
+                         </table>
+
+                    </div>
+                </div>
+            </div>
+            <!--[if !IE]>主要内容开始<![endif]-->
+            <!--[if !IE]>左边内容<![endif]-->
+            <div class="LayoutLeft">
+            	<!-- 用户左边侧边栏目  -->
+
+{% endblock base %}
+
+
+<div class="ws-catebox">
+    <div class="item">
+        <!--
+		<div class="hd">我的交易</div>
+		-->
+
+        <div class="bd" id="wg_SellSelectMenu">
+			            <div class="menu-box">
+            	<h3 class="mywinguo-bar">
+            		<span>交易管理</span>
+            		<div class="extend"></div>
+            	</h3>
+                <ul class="group" style="">
+
+					<li>
+					<span>
+						<a href="{% url 'axf:buy' %}">
+						已买到的商品						</a>
+						</span>
+					</li>
+
+					<li>
+					<span>
+						<a href="" target="_blank">
+						我的购物车						</a>
+						</span>
+					</li>
+
+					<li>
+					<span>
+						<a href="{% url 'axf:collect' %}">
+						我的收藏						</a>
+						</span>
+					</li>
+
+					<li>
+					<span>
+						<a href="{% url 'axf:site' %}">
+						收货地址						</a>
+						</span>
+					</li>
+
+                </ul>
+            </div>
+            <div class="menu-box">
+            	<h3 class="mywinguo-bar">
+            		<span>退款维权</span>
+            		<div class="extend"></div>
+            	</h3>
+                <ul class="group" style="">
+
+					<li>
+					<span>
+						<a href="">
+						退款管理						</a>
+						</span>
+					</li>
+
+					<li>
+					<span>
+						<a href="">
+						售后管理						</a>
+						</span>
+					</li>
+
+                </ul>
+            </div>
+            <div class="menu-box">
+            	<h3 class="mywinguo-bar">
+            		<span>账户中心</span>
+            		<div class="extend"></div>
+            	</h3>
+                <ul class="group" style="">
+
+					<li>
+					<span>
+						<a href="{% url 'axf:info' %}">
+						账号信息						</a>
+						</span>
+					</li>
+
+					<li>
+					<span>
+						<a href="{% url 'axf:account' %}">
+						账号安全						</a>
+						</span>
+					</li>
+
+					<li>
+					<span>
+						<a href="{% url 'axf:bind' %}">
+						账号绑定						</a>
+						</span>
+					</li>
+
+					<li>
+					<span>
+						<a href="{% url 'axf:purse' %}" target="_blank">
+						我的钱包						</a>
+						</span>
+					</li>
+
+                </ul>
+            </div>
+			<div class="menu-box">
+            	<h3 class="mywinguo-bar">
+            		<span>我的空间站</span>
+            		<div class="extend"></div>
+            	</h3>
+                <ul class="group" style="">
+
+					<li>
+					<span>
+						<a href="">
+						开通空间站						</a>
+						</span>
+					</li>
+
+                </ul>
+            </div>
+			        </div>
+    </div>
+</div>            </div>
+            <!--[if !IE]>左边内容<![endif]-->
+        </div>
+    </div>
+</div><div id="footer" class="footer">
+    <div class="help">
+        <div class="wPage">
+            <div class="help-item">
+
+                <ul class="help-ul cls">
+                                       <li>
+                        <div class="help-txt">
+                            <h2>新手上路</h2>
+                            <p><a href="http://help.winguo.com/index.php?action=artikel&amp;cat=78&amp;id=1&amp;artlang=zh" target="_blank">关于商城</a></p>
+                            <p><a href="http://help.winguo.com/index.php?action=artikel&amp;cat=42&amp;id=30&amp;artlang=zh" target="_blank">新手专区</a></p>
+                            <p><a href="http://help.winguo.com/index.php?action=artikel&amp;cat=42&amp;id=31&amp;artlang=zh" target="_blank">免费注册</a></p>
+                            <p><a href="http://help.winguo.com/">帮助中心</a></p>
+							<p><a href="http://m.kuaidi100.com" target="_blank">快递查询</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="help-txt">
+                            <h2>购物指南</h2>
+                            <!--
+                            <p><a href="">怎样购物</a></p>
+                            <p><a href="">使用果币</a></p>
+							-->
+                            <p><a href="http://help.winguo.com/index.php?action=artikel&amp;cat=13&amp;id=23&amp;artlang=zh" target="_blank">订单状态说明</a></p>
+                            <p><a href="http://help.winguo.com/index.php?action=artikel&amp;cat=54&amp;id=109&amp;artlang=zh" target="_blank">关于收货</a></p>
+                            <p><a href="http://help.winguo.com/index.php?action=artikel&amp;cat=29&amp;id=72&amp;artlang=zh&amp;highlight=%E6%94%B6%E8%B4%A7" target="_blank">关于售后</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="help-txt">
+                            <h2>付款</h2>
+                            <p><a href="http://help.winguo.com/index.php?action=artikel&amp;cat=13&amp;id=58&amp;artlang=zh" target="_blank">货到付款</a></p>
+                            <p><a href="http://help.winguo.com/index.php?action=artikel&amp;cat=42&amp;id=30&amp;artlang=zh" target="_blank">在线支付</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="help-txt">
+                            <h2>购物保障</h2>
+                            <p><a href="http://help.winguo.com/index.php?action=artikel&amp;cat=76&amp;id=108&amp;artlang=zh" target="_blank">品质保障</a></p>
+                            <p><a href="http://help.winguo.com/index.php?action=artikel&amp;cat=76&amp;id=85&amp;artlang=zh" target="_blank">先行赔付</a></p>
+                            <p><a href="http://help.winguo.com/index.php?action=artikel&amp;cat=76&amp;id=86&amp;artlang=zh" target="_blank">假一赔三</a></p>
+                            <p><a href="http://help.winguo.com/index.php?action=artikel&amp;cat=76&amp;id=84&amp;artlang=zh" target="_blank">快速发货保障</a></p>
+                            <p><a href="http://help.winguo.com/index.php?action=artikel&amp;cat=76&amp;id=87&amp;artlang=zh" target="_blank">无忧退货</a></p>
+                        </div>
+                    </li>
+                    <li class="help-li-last">
+                        <div class="help-txt">
+                            <h2>商家服务</h2>
+                            <p><a href="http://help.winguo.com/index.php?action=show&amp;cat=2" target="_blank">招商帮助</a></p>
+                            <p><a href="http://sell.winguo.com/regist">商家入驻</a></p>
+                            <p><a href="http://help.winguo.com/index.php?action=show&amp;cat=41" target="_blank">商家中心</a></p>
+                            <p><a href="http://help.winguo.com/index.php?action=show&amp;cat=14" target="_blank">商家规则</a></p>
+                        </div>
+                    </li>
+                                   </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wPage">
+        <div class="footer-detail">
+			<span class="copyright">
+                <a href="http://www.miitbeian.gov.cn">粤ICP备14081128号-6</a> |
+                <span>经营许可证编号：经营许可证编号:粤B2-20140190</span>
+                <span>Copyright 2019 winguo.com版权所有</span>
+            </span>
+            <span class="footer-phone">客服热线：400-8828-122</span>
+        </div>
+
+    </div>
+    <!--<div style="display:none;">
+    <script language="javascript" type="text/javascript" src="http://js.users.51.la/17115560.js"></script>
+  	</div>-->
+</div>
+
+<script type="text/javascript">
+    var passport_host="http://passport.winguo.com";
+</script>
+<!--sidebar end-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fbea64380f47e5f2fbf938596dccb974e' type='text/javascript'%3E%3C/script%3E"));
+</script><script src=" http://hm.baidu.com/h.js?bea64380f47e5f2fbf938596dccb974e" type="text/javascript"></script>
+<div class="tip-title-notice w_TipTitleNotice" style="display: none; z-index: 2;"><div class="tip-hd w_TipHd"></div><div class="tip-bd w_TipBd"></div></div></body></html>
+
+ <script type="text/javascript" src="/static/js/swiper.js"></script>
+    <script type="text/javascript">
+		window.onload=function(){
+			var mySwiper=new Swiper(".swiper-container",{
+				direction:"horizontal",
+				autoplay:3000,
+				loop:true,
+				nextButton:".swiper-button-next", //上下箭头
+				prevButton:".swiper-button-prev",
+				pagination:'.swiper-pagination', //按钮导航
+				paginationClickable: true, //可点击按钮
+		        paginationBulletRender: function (swiper, index, className) {
+		            return '<span class="' + className + '">' + (index + 1) + '</span>';
+		        },
+		        freeMode : true,
+		        effect:"fade",//淡入淡出
+			});
+		}
+	</script>
+</body>
+</html>
+<script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/static/js/cookieTools.js"></script>
+<script type="text/javascript" src="/static/js/public.js"></script>
+<script type="text/javascript">
+$(function(){
+	InitUI();
+	MenuEvent();
+	//动态创建购物车产品
+	function setCartList(data){
+		let goods_list_arr=data;
+		//动态创建商品
+		for(let i=0; i<goods_list_arr.length; i++){
+			$tr_goods_tr=$("<tr></tr>");
+			$tr_goods_tr.attr("goodsid",goods_list_arr[i].goodsId);
+			 //图片
+			$li_goods_img=$('<td class="tr_shop_img" width=60><a href="javascript:;"><img/></a></td>');
+			$li_goods_img.children().children().prop("src",goods_list_arr[i].goodsImg); //图片
+			//名称
+			$li_goods_name=$("<td><a></a></td>");
+			$li_goods_name.children("a").text(goods_list_arr[i].goodsName);//名称
+			$li_goods_name.children("a").prop({
+				"title":goods_list_arr[i].goodsName,
+				"target":"_blank"
+			});
+			$li_goods_delete=$('<td><span><b class="small_cart_price">¥'+goods_list_arr[i].goodsPrice+'</b> x <i class="small_cart_sum">'+goods_list_arr[i].beiyong1+'</i></span><br/><a href="javascript:;" class="cart_delete_btn">删除</a></td>');
+			$tr_goods_tr.append($li_goods_img,$li_goods_name,$li_goods_delete);
+			$(".buy_show tbody").append($tr_goods_tr);
+		}
+		var p = new Promise(function(resolve,reject){
+			resolve(goods_list_arr);
+		});
+		return p;
+	}
+});
+</script>

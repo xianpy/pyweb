@@ -1,0 +1,399 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>良品铺子商城-用户注册</title>
+	<meta name="description" content="良品铺子LPPZ.COM-专业的休闲食品网上购物商城，在线销售肉脯鱼干、果干果脯、糕点糖果、素食山珍、茶水饮料、进口食品、礼盒等数百种优质食品。便捷、诚信的服务，为您提供愉悦的休闲食品网上购物体验! ">
+	<meta name="Keywords" content="网上商城,休闲零食，美食，牛肉干，鱼干，果干果脯，糕点糖果，素食山珍，茶水饮料，进口食品，礼盒，良品铺子">
+</head>
+<link rel="stylesheet" href="{% static 'css/public.css'%}" />
+<link rel="stylesheet" href="{% static 'css/login.css'%}" />
+<link rel="stylesheet" href="{% static 'css/register.css'%}" />
+<body>
+	<!-- toolbar -->
+	<div class="toolbar">
+		<div class="toolbar_content wide">
+			<ul class="toolbar_content_left">
+				<li>欢迎来到良品铺子官方商城！</li>
+				<li><a href="{% url 'axf:login' %}">[登录]</a></li>
+{#				<li><a href="{% url 'axf:register' %}">[注册]</a></li>#}
+				<li><a href="">支付宝快捷登录</a></li>
+				<li><a href="">qq登录</a></li>
+				<li><a href="">微博登录</a></li>
+			</ul>
+			<ul class="toolbar_content_right">
+				<li class="attention_li">
+					<a href="">关注良品<i class="arrow"></i></a>
+					<div class="attention">
+						<div class="wb">
+							<div class="wb-tit">
+								关注微博
+							</div>
+							<div class="wb-plus">
+								<iframe src="http://widget.weibo.com/relationship/followbutton.php?btn=red&style=2&uid=1851770484&width=136&height=24&language=zh_cn" width="136" height="24" scrolling="no" frameborder="0"></iframe>
+							</div>
+						</div>
+						<div class="attention_mid">
+							<img src="images/img_index/dz_qrcode.jpg" alt="">
+						</div>
+						<div class="attention_bottom">
+							<img src="images/img_index/weixin.png" alt="">
+							<div>
+								<p>微信扫一扫</p>
+								<p>优惠随身携带!</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li><a href="">官方网站</a></li>
+				<li><p><span class="tel_img"></span>全国订购热线：<span class="tel_num">400-1177-517</span></p></li>
+			</ul>
+		</div>
+	</div>
+	<!--header-->
+	<div class="header">
+		<a href="index.html" title="良品铺子" >
+			<img src="images/img_login/logo.png" alt="" />
+		</a>
+		<h1>欢迎注册</h1>
+	</div>
+	<!--login-->
+	<div class="login clear_float">
+		<div class="login_left">
+			<img src="{%  static 'images/img_register/ad2.jpg'%}" alt="" />
+		</div>
+
+        <form class="popup" action="{% url 'axf:register' %}" method="post">
+            {% csrf_token %}
+            <div class="login_right">
+                <div class="tit">
+                    <h3>用户注册</h3>
+                    <p>已有账户，<a href="{% url 'axf:login' %}">在此登录&gt</a></p>
+                </div>
+                <ul class="reg_list">
+                    <li>
+                        <span><b>*</b>用户名：</span><input type="text" name="username" id="" value="" class="username"/>
+                        <span class='reg_tip'></span>
+                    </li>
+                    <li>
+                        <span><b>*</b>密&nbsp;码：</span><input type="password" name="password" id="" value="" class="password"/>
+                        <span class='reg_tip'></span>
+                    </li>
+                    <li>
+                        <span><b>*</b>确认密码：</span><input type="password" name="password_repeat" id="" value="" class="password_repeat"/>
+                        <span class='reg_tip'></span>
+                    </li>
+                    <li>
+                        <span><b>*</b>手机号：</span><input type="tel" name="phone_num" id="" value="" class="phone_num"/>
+                    <span class='reg_tip'></span>
+                    </li>
+
+{#                    <li>#}
+{#                        <span><b>*</b>短信验证码：</span>#}
+{#                        <input type="text" name="" id="" value="" class="message_verification_code"/>#}
+{#                        <a href="" id="zphone">获取短信验证码</a>#}
+{#                        <span class='reg_tip'></span>#}
+{#                    </li>#}
+                </ul>
+                <div class="login_agree" >
+                    <b>*</b><input type="checkbox" checked class="agree_checked"/><span>我已阅读并同意<a href="">《良品铺子用户注册协议》</a></span>
+                    <span class='reg_tip'></span>
+                </div>
+                <input type="submit" class="login_btn" value="同意协议并注册">
+            </div>
+        </form>
+    </div>
+
+	<!-- footer -->
+	<div class="footer">
+		<div class="foot_area">
+			<div class="foot_nav">
+				<ul>
+					<li><a href="">关于我们</a></li>
+					<li><a href="">联系我们</a></li>
+					<li><a href="">客户服务</a></li>
+					<li><a href="">诚聘英才</a></li>
+					<li><a href="">商务合作</a></li>
+					<li><a href="">媒体报道</a></li>
+					<li><a href="">网站地图</a></li>
+					<li><a href="">快递查询</a></li>
+				</ul>
+			</div>
+			<div class="foot_copyright">
+				Copyright@2006-2017 湖北良品铺子电子商务有限公司 All rights Reserved<br/>
+				<a href="">鄂ICP备15022981号</a><br/>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="{% static 'js/jquery-1.8.3.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/cookieTools.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/public.js'%}"></script>
+<script type="text/javascript">
+
+
+
+
+$(function(){
+	//关注良品显示隐藏
+	makeHideAndShow($(".attention_li"),$(".attention"),200);
+	makeHideAndShow($(".login_bottom_code_pointer"),$(".login_bottom_code_pointer_img"),200);
+	//input边框
+	let input_btns=$(".login_right input");
+	for(let i=0;i<input_btns.length;i++){
+		$(input_btns[i]).focus(function(){
+			$(this).css("border","1px solid #F04747");
+		});
+		$(input_btns[i]).blur(function(){
+			$(this).css("border","1px solid #ccc");
+		});
+	}
+	//表单状态 0表示失败，1表示成功
+	let input_state = [];
+	//找到所有要验证的input
+	let $inputs = $(".reg_list>li:nth-child(-n+6)>input");
+	//找到所有需要提示的li下的提示框
+	let $tipSpans = $(".reg_tip");
+	for(let i=0; i<$inputs.length; i++){
+		input_state[i]=0;
+		$($inputs[i]).focus(function(){
+			//默认都是不符合
+			input_state[i]=0;
+			//初始化边框和提示框的样式
+			$(this).css("border-color","#68B939");
+			$($tipSpans[i]).css({
+				"background":"#f6f6f6",
+				"border-color":"#DDDDDD",
+				"color":"#666666"
+			});
+			let textStr="";
+			let titleStr="";
+			switch(this.className){
+				case 'username':
+					textStr="4-20位字符，支持汉字、字母、数字";
+					titleStr='4-20位字符，支持汉字、字母、数字及 "-"、"_"组合';
+				break;
+				case 'password':
+					textStr="6-20位字符，由字母，数字和符号两种以上组合";
+					titleStr='6-20位字符，由字母，数字和符号两种以上组合';
+					break;
+				case 'password_repeat':
+					textStr="请再次输入密码";
+					titleStr='请再次输入密码';
+					break;
+				case 'phone_num':
+					textStr="请输入手机号";
+					titleStr='请输入手机号';
+					break;
+				case 'verification_code':
+					textStr="请输入验证码";
+					titleStr='请输入验证码';
+					break;
+				case 'message_verification_code':
+					textStr="请输入短信验证码";
+					titleStr='请输入短信验证码';
+					break;
+				default:;break;
+			}
+			$($tipSpans[i]).text(textStr);
+			$tipSpans[i].title=titleStr;
+			$($tipSpans[i]).css("display","block");
+		});
+		$($inputs[i]).blur(function(){
+			let tipMsg=""; //错误的提示信息
+			let inputStr = $(this).val(); //当前input的value
+			let reg="";
+			switch(this.className){
+				case 'username':
+					//1.本地验证
+					if(inputStr===""){
+						tipMsg="请输入用户名";
+						break;
+					}
+					if(inputStr.length<4 || inputStr.length>20){
+						tipMsg="长度范围在4-20字符之间";
+						break;
+					}
+					reg = /^\d{4,20}$/;
+					if(reg.test(inputStr)){
+						tipMsg="用户名不能是纯数字，请重新输入";
+						break;
+					}
+					reg = /^[\u4e00-\u9fa5a-zA-Z0-9_\-]{4,20}$/;
+					if(!reg.test(inputStr)){
+						tipMsg='用户名只允许包含汉字、字母、数字及 "-"、"_"组合';
+						break;
+					}
+
+					//到这里是验证成功
+					input_state[i]=1;
+				break;
+				case 'password':
+					tipMsg="请输入密码";
+					if(inputStr===""){
+						break;
+					}
+					reg=/^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$/;
+					if(!reg.test(inputStr)){
+						tipMsg="密码为6-20位字符，由字母，数字和符号两种以上组合";
+						break;
+					}
+
+					input_state[i]=1;
+				break;
+				case 'password_repeat':
+					tipMsg="请确认密码";
+					if(inputStr===""){
+						break;
+					}
+					if($($inputs[i]).val()!=$($inputs[i-1]).val()){
+						tipMsg="两次密码不一致，请重新输入";
+						break;
+					}
+
+					input_state[i]=1;
+				break;
+				case 'phone_num':
+					tipMsg="请输入手机号";
+					if(inputStr===""){
+						break;
+					}
+
+					reg=/^1[34578]\d{9}$/;
+					if(!reg.test(inputStr)){
+						tipMsg="手机号输入错误";
+						break;
+					}
+
+					input_state[i]=1;
+				break;
+				case 'verification_code':
+					tipMsg="请输入验证码";
+					if(inputStr===""){
+						break;
+					}
+
+
+					input_state[i]=1;
+				break;
+				case 'message_verification_code':
+					tipMsg="请输入短信验证码";
+					if(inputStr===""){
+						break;
+					}
+
+
+					input_state[i]=1;
+				break;
+				default:;break;
+			}
+			if(input_state[i]=== 1 && this.className==="username"){
+					 $.ajax({
+					 	type:"get",
+					 	url:"php/checkUser.php",
+					 	async:true,
+					 	data:{
+					 		"userName":$(".username").val()
+					 	},
+					 	success:function(msg){
+					 		if(msg=="0"){
+					 			tipMsg="该用户名已被人占用，请修改。"
+					 			input_state[i]=0;
+					 			$($tipSpans[i]).css("display","block");
+					 			$(".username").css("background","url(../images/img_register/ico_login.png) right 8px no-repeat");
+					 		}else if(msg=="-1"){
+					 			tipMsg="连接服务器失败，请稍后再试。"
+					 			input_state[i]=0;
+					 			$($tipSpans[i]).css("display","block");
+					 		}else if(msg=="1"){
+					 			$($tipSpans[i]).css("display","none");
+					 			$(".username").css("background","url(images/img_register/ico_login.png) right -318px no-repeat");
+					 		}
+					 		$($tipSpans[i]).text(tipMsg); 
+					 	}
+					 });
+			}
+			if(input_state[i]===0){
+				//错误状态显示
+				$($tipSpans[i]).text(tipMsg); 
+				$($tipSpans[i]).css({
+					"background":"#FFEBEB",
+					"border-color":"#FFBDBE",
+					"color":"#E83029"
+				});
+				$(this).css("border-color","FFBDBE");
+				return;
+			}else if(this.className!=="username"){
+				//正确，隐藏掉提示框，并更换提示图标
+				$($tipSpans[i]).css("display","none");
+				$(this).css("background","url(images/img_register/ico_login.png) right -318px no-repeat");
+			}else{
+				$($tipSpans[i]).text("等待服务器验证中...");
+			}
+			
+		});
+		
+	}
+	
+//	//注册按钮
+	let $login_btn = $(".login_btn");
+	let $agree_checked = $(".agree_checked");
+	$login_btn.click(function(){
+		if(input_state.indexOf(0)==-1 ){
+			if($agree_checked.prop("checked")==true){
+				console.log("注册成功");
+				$.ajax({
+					type:"post",
+					url:"php/regSave.php",
+					async:true,
+					data:{
+						"userName":$(".username").val(),
+						"userPass":$(".password").val(),
+						"phoneNum":$(".phone_num").val()
+					},
+					success:function(msg){
+						if(msg=="1"){
+							addCookie("userName",$(".username").val(),7);
+							location.href="index.html";
+							//缓存cookie
+						}else if(msg=="-1"){
+							alert("连接服务器失败，请稍后重新注册。");
+						}else if(msg=="0"){
+							alert("该用户已经有人注册，不符程序前面验证");
+						}
+					}
+				});
+			}else{
+				$tipSpans.last().css({
+					"background":"#FFEBEB",
+					"border-color":"#FFBDBE",
+					"color":"#E83029",
+					"display":"block"
+				});
+				$tipSpans.last().text("请接受服务条款");
+			}
+		}else{
+			for(let i=0; i<input_state.length; i++){
+				if(input_state[i]==0){
+					$($inputs[i]).trigger("focus");
+					$($inputs[i]).trigger("blur");
+				}
+			}
+			return;
+		}
+	});
+	
+	//同意条款按钮
+	$agree_checked.click(function(){
+		$($tipSpans.last()).css("display","none");
+	});
+	
+	//css里面这里在服务器上一直不更新
+	$(".toolbar_content_left").css("display","block");
+});
+
+
+
+</script>

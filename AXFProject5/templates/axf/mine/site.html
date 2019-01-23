@@ -1,0 +1,209 @@
+{% extends 'axf/mine/base.html' %}
+{% load static %}
+
+{% block linkscript%}
+ <link href="http://css.winguo.com/skin/2013/mall/css/usercenter/address.css?v=3.4.31" type="text/css"rel="stylesheet" />
+
+ <script type="text/javascript" src="http://js.winguo.com/jScripts/mall/shopping/shopping.js?v=3.4.31"></script>
+    <link href="http://css.winguo.com/skin/2013/mall/css/usercenter/allOrders.css?v=3.4.31" type="text/css" rel="stylesheet">
+    <link id="artDialog-skin" href="http://js.winguo.com/jScripts/global/art/skins/simple.css?v=3.4.31" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="http://js.winguo.com/jScripts/global/calendar/src/css/jscal2.css?v=3.4.31">
+    <script type="text/javascript" src="http://js.winguo.com/jScripts/global/art/jquery.artDialog.min.js?v=3.4.31"></script>
+    <script type="text/javascript" src="http://js.winguo.com/jScripts/mall/usercenter/orders.js?v=3.4.31"></script>
+    <script src="http://js.winguo.com/jScripts/global/calendar/src/js/jscal2.js?v=3.4.31"></script>
+    <script src="http://js.winguo.com/jScripts/global/calendar/src/js/unicode-letter.js?v=3.4.31"></script>
+    <script src="http://js.winguo.com/jScripts/wenwen/wen.js?v=3.4.31"></script>
+    <style type="text/css">
+.sitesearch .logo .site_logo {float:left;width:175px;height:56px;background:url('http://css.winguo.com/themes/www/image/global/logo_v1_175x56.png') no-repeat;text-indent:-9999px;}
+</style>
+
+{% endblock linkscript%}
+
+
+
+{% block base %}
+<div id="content" class="content">
+	<div class="wPage">
+    	<div class="cls">
+        	<!--[if !IE]>主要内容开始<![endif]-->
+            <div class="LayoutCenter">
+                <div class="LayoutWrap">
+                	<!--[if !IE]>正式内容start<![endif]-->
+                    <div class="navigation">
+                        <div class="crumbs">
+                            <a href="{% url 'axf:centre' %}">我的账户</a>收货地址
+                        </div>
+                	</div>
+
+                    <div class="page-nav-tab-wrap">
+
+                        <b class="page-nav-line"></b>
+                    </div>
+                    <!--[if !IE]>添加编辑区域<![endif]-->
+                    <div class="addressForm">
+                    	<div class="step_form">
+							<form action="{% url 'axf:site' %}" method="post" id="addressForm">
+                                {% csrf_token %}
+
+	<div class="item">
+		<label class="field-hd"><b>*</b>联系人：</label>
+		<div class="field-bd">
+			<input type="text" name="linkman" id="contactname" class="ui-txt-bs"><span class="middle s-tip"></span>
+			<div class="ui-form-validate">
+				<div class="ui-feedback">
+					<div class="ui-feedback-inner ui-feedback-error">
+						<p>此项为必填项。</p><s class="ui-feedback-icon"></s>
+					</div>
+					<s class="ui-feedback-arrow ui-feedback-arrow-top"></s>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="item">
+		<label class="field-hd"><b>*</b>所在地区：</label>
+		<div class="field-bd">
+			<div class="select_onbox" id="address"  data-required="true">
+				<input type="text" name="area" id="contactname" class="ui-txt-bs"><span class="middle s-tip"></span>
+				<div class="ui-form-validate">
+					<div class="ui-feedback">
+						<div class="ui-feedback-inner ui-feedback-error">
+							<p>此项为必填项。</p><s class="ui-feedback-icon"></s>
+						</div>
+						<s class="ui-feedback-arrow ui-feedback-arrow-top"></s>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="item">
+		<label class="field-hd"><b>*</b>街道地址：</label>
+		<div class="field-bd">
+			<input type="text" name="address" id="add-street" class="ui-txt-max"><span class="middle s-tip" id="add-street-tip">不需要重复填写省/市/区</span>
+			<div class="ui-form-validate">
+				<div class="ui-feedback">
+					<div class="ui-feedback-inner ui-feedback-error">
+						<p>此项为必填项。</p><s class="ui-feedback-icon"></s>
+					</div>
+					<s class="ui-feedback-arrow ui-feedback-arrow-top"></s>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="item">
+		<label class="field-hd"><b>*</b>邮政编码：</label>
+		<div class="field-bd">
+			<input type="text" name="postal" id="add-postcode" class="ui-txt-bs"><span class="middle s-tip"></span>
+			<div class="ui-form-validate">
+				<div class="ui-feedback">
+					<div class="ui-feedback-inner ui-feedback-error">
+						<p>此项为必填项。</p><s class="ui-feedback-icon"></s>
+					</div>
+					<s class="ui-feedback-arrow ui-feedback-arrow-top"></s>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="item">
+		<label class="field-hd">手机号码：</label>
+		<div class="field-bd">
+			<input type="text" name="phone" id="add-mobil" maxlength="11" class="ui-txt-bs"><span class="middle s-tip" id="mobilandtelphone">电话号码、手机号码选填一项</span>
+			<div class="ui-form-validate">
+				<div class="ui-feedback">
+					<div class="ui-feedback-inner ui-feedback-error">
+						<p></p><s class="ui-feedback-icon"></s>
+					</div>
+					<s class="ui-feedback-arrow ui-feedback-arrow-top"></s>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="item">
+		<label class="field-hd">电话号码：</label>
+		<div class="field-bd">
+			<input type="text" name="telephone" id="tel-1" class="ui-txt-smin" maxlength="12"><span class="middle s-tip">区号-电话号码-分机</span>
+			<div class="ui-form-validate">
+				<div class="ui-feedback">
+					<div class="ui-feedback-inner ui-feedback-error">
+						<p></p><s class="ui-feedback-icon"></s>
+					</div>
+					<s class="ui-feedback-arrow ui-feedback-arrow-top"></s>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="item">
+		<label class="field-hd">备注：</label>
+		<div class="field-bd">
+			<textarea name="remark" id="add-ps" data-maxlength="200" class="multitext" data-title="留言"></textarea>
+		</div>
+	</div>
+	<div class="item item-btn-area">
+		<button type="submit" class="ui-btn-bs">添加新地址</button>
+	</div>
+	</form>
+                        </div>
+                    </div>
+                    <!--[if !IE]>添加编辑区域<![endif]-->
+                    <div class="addressList" id="addressList">
+                    	<form action="" method="post">
+                            {% csrf_token %}
+						<input type="hidden" name="setDefault" value="1" />
+                    	<table>
+                        	<colgroup>
+                            	<col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col width="100">
+                                <col width="50">
+                            </colgroup>
+                        	<thead>
+                            	<tr>
+                                    <th>设置</th>
+                                    <th>联系人</th>
+                                    <th>所在地区</th>
+                                    <th>街道地址</th>
+                                    <th>邮政编码</th>
+                                    <th>电话/手机</th>
+                                    <th>操作</th>
+                            	</tr>
+                            </thead>
+                            <tbody>
+                                {% for addre in addres %}
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="address_id" id="fhid_3141" class="middle" value="3141"  >
+									        <label for="fhid_3141" class="middle">默认</label>
+                                        </td>
+                                        <td>{{ addre.linkman }}</td>
+                                        <td>{{ addre.area }}</td>
+                                        <td>{{ addre.address }}</td>
+                                        <td>{{ addre.postal }}</td>
+                                        <td>{{ addre.telephone }}<br/>{{ addre.phone }}</td>
+                                        <td>
+										    <a href="{% url 'axf:delete' addre.id %}">删除</a><br>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        </form>
+                    </div>
+                	<!--[if !IE]>正式内容结束<![endif]-->
+                </div>
+            </div>
+            <!--[if !IE]>主要内容开始<![endif]-->
+            <!--[if !IE]>左边内容<![endif]-->
+            <div class="LayoutLeft">
+            	<!-- 用户左边侧边栏目  -->
+
+
+{% endblock base %}

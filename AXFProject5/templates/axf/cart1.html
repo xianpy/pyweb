@@ -1,0 +1,632 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车-良品铺子官方商城-休闲零食网购首选（LPPZ.COM）- 品质保障、配送及时、放心服务、轻松购物!</title>
+	<meta name="description" content="良品铺子LPPZ.COM-专业的休闲食品网上购物商城，在线销售肉脯鱼干、果干果脯、糕点糖果、素食山珍、茶水饮料、进口食品、礼盒等数百种优质食品。便捷、诚信的服务，为您提供愉悦的休闲食品网上购物体验! ">
+	<meta name="Keywords" content="网上商城,休闲零食，美食，牛肉干，鱼干，果干果脯，糕点糖果，素食山珍，茶水饮料，进口食品，礼盒，良品铺子">
+</head>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/public.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/cart.css'%}"/>
+<body>
+	<!-- toolbar -->
+	<div class="toolbar">
+		<div class="toolbar_content wide">
+			<ul class="toolbar_content_left">
+				<li>欢迎来到良品铺子官方商城！</li>
+				<li><a href="login.html">[登录]<span></span></a></li>
+				<li><a href="register.html">[注册]</a></li>
+				<li><a href="">支付宝快捷登录</a></li>
+				<li><a href="">qq登录</a></li>
+				<li><a href="">微博登录</a></li>
+			</ul>
+			<!--登录的显示-->
+			<div class="toolbar_content_left_logined">
+				<p>
+					<span>您好</span>
+					<a href="" class="toolbar_username"></a>
+					<span>,</span>
+				</p>
+				<p>欢迎来到良品铺子官方商城！</p>
+				<a href="javascript:;" class="toolbar_quit">[退出]</a>
+			</div>
+			<ul class="toolbar_content_right">
+				<li class="myInfo_li">
+					<a href="" class="myInfo ">我的良品<i class="arrow"></i></a>
+					<div class="myInfo_hover">
+						<div class="myInfo_top">
+							<div class="user_head">
+								<a href=""><img src="images/img_index/avatar.png" alt=""></a>
+							</div>
+							<a href="">您好，请登录</a>
+						</div>
+						<ul class="myInfo_mid">
+							<li><a href="">我的订单</a></li>
+							<li><a href="">我的关注</a></li>
+							<li><a href="">我的优惠券</a></li>
+							<li><a href="">我的积分</a></li>
+							<li><a href="">签到有好礼</a></li>
+							<li><a href="">购物指南</a></li>
+						</ul>
+						<div class="myInfo_bottom">
+							<p>最近浏览 <span><a href="" style="color:#555">更多></a></span></p>
+						</div>
+					</div>
+				</li>
+				<li class="attention_li">
+					<a href="">关注良品</a>
+					<div class="attention">
+						<div class="wb">
+							<div class="wb-tit">
+								关注微博
+							</div>
+							<div class="wb-plus">
+								<iframe src="http://widget.weibo.com/relationship/followbutton.php?btn=red&style=2&uid=1851770484&width=136&height=24&language=zh_cn" width="136" height="24" scrolling="no" frameborder="0"></iframe>
+							</div>
+						</div>
+						<div class="attention_mid">
+							<img src="images/img_index/dz_qrcode.jpg" alt="">
+						</div>
+						<div class="attention_bottom">
+							<img src="images/img_index/weixin.png" alt="">
+							<div>
+								<p>微信扫一扫</p>
+								<p>优惠随身携带!</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li><a href="">官方网站</a></li>
+				<li><p><span class="tel_img"></span>全国订购热线：<span class="tel_num">400-1177-517</span></p></li>
+			</ul>
+		</div>
+	</div>
+	<!-- header -->
+	<div class="header clear_float">
+		<div class="header_main">
+			<div class="main_logo">
+				<a href="index.html">良品铺子-BESTORE</a>
+			</div>
+			<div class="main_search">
+				<div class="search_box">
+					<p>
+						热门搜索：
+						<a href=""><span>松子</span></a> 
+						<a href="">牛肉</a>
+						<a href="">开心果</a>
+						<a href="">核桃</a>
+						<a href="">话梅</a>
+						<a href="">花生瓜子</a>
+					</p>
+					<input class="search_bar" type="input" placeholder="商品搜索" /><input class="search_btn" type="button">
+				</div>
+			</div>
+			<div class="main_buy">
+				<a href="">购物车</a>
+				<span class="buy_num"><b>0</b></span>
+				<div class="buy_show">
+					<p>最近加入的商品</p>
+					<div class="buy_show_bottom">
+						<div class="buy_right">
+							<p>共计<span>0</span>件商品，共计<span>¥0.00</span></p>
+							<a href="">去购物车结算</a>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="shop_menu">
+			<div class="menu_center">
+				<a href="">首页</a>
+				<a href="">上新尝鲜</a>
+			</div>
+		</div>
+	</div>
+	<!--cart-->
+	<div class="cart">
+		<div class="cart_cont">
+			<div class="cart_cont_tit">
+				<ul>
+					<li class="cart_current">查看购物车</li>
+					<li>确认订单信息</li>
+					<li>完成订单</li>
+				</ul>
+			</div>
+			<div class="cart_cont_area">
+				<table>
+					<tbody>
+						<tr>
+							<th width="18">
+								<input type="checkbox" class="all_select" checked/>
+							</th>
+							<th width="60" class="cent">全选</th>
+							<th>商品名称</th>
+							<th width="80">单价</th>
+							<th width="60">数量</th>
+							<th width="100">小计</th>
+							<th width="90">操作</th>
+						</tr>
+                        {% for cart in carts %}
+    <tr>
+        <td><input type="checkbox" checked/></td>
+        <td></td>
+        <td>{{ cart.productname }}</td>
+        <td>{{ cart.price }}</td>
+        <td>{{ cart.cart_num }}</td>
+        <td>{{ totalPrice }}</td>
+        <td>删除</td>
+    </tr>
+{% endfor %}
+						<!--<tr>
+							<td>
+								<input type="checkbox" checked/>
+							</td>
+							<td>
+								<a href="">
+									<img src="images/img_cart/1.jpg" alt="" />
+								</a>
+							</td>
+							<td class="commodity">
+								<a href="" title="东北红松218g（电商专供）" target="_blank">东北红松218g（电商专供）</a>
+							</td>
+							<td class="single_price">¥<span>29.90</span></td>
+							<td>
+								<div class="cart_shop_num ">
+									<span class="sub_btn">-</span>
+									<input type="text" value="1" />
+									<span class="add_btn">+</span>
+								</div>
+							</td>
+							<td>
+								<span class="item_total">
+									¥<b>29.90</b>
+								</span>
+							</td>
+							<td>
+								<a href="">删除</a><br/>
+								<a href="">移到我的关注</a>
+							</td>
+						</tr>-->			
+					</tbody>
+				</table>
+				<div class="cart_total">
+					<input type="checkbox" class="all_select" checked/>
+					&nbsp;&nbsp;全选
+					<a href="javascript:;" class="cart_delete">删除</a>
+					<a href="index.html">继续购物</a>
+				</div>
+				<div class="cart_bottom clear_float">
+					<div class="bot_right">
+						<div class="sec_left">
+							<span>登录后确认是否享有优惠</span>
+							<span>商品金额：<b>¥<i class="all_money">0.00</i></b></span>
+							<p>已优惠：<span>¥0</span></p>
+						</div>
+						<div class="sec_right">
+							<a href="">结算</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+	<div class="footer">
+		<div class="foot_service">
+			<ul>
+				<li>
+					<em>100%</em>
+					<p>正品保证</p>
+				</li>
+				<li>
+					<em>10天</em>
+					<p>无理由退换货</p>
+				</li>
+				<li>
+					<em>满68元</em>
+					<p>全场包邮</p>
+				</li>
+				<li>
+					<em>积分抵现金</em>
+					<p>100积分=1元</p>
+				</li>
+				<li>
+					<em>开箱验货</em>
+					<p>先验货再签收</p>
+				</li>
+				<li>
+					<em>多仓就近发货</em>
+					<p>快速直达</p>
+				</li>
+			</ul>
+		</div>
+		<div class="foot_area">
+			<div class="foot_cont">
+				<div class="fc_contact">
+					<div class="ctt_icon">
+						热线
+					</div>
+					<div class="ctt_txt">
+						<p>
+							<strong>400-1177-517</strong>
+						</p>
+						<p>
+							良品铺子客服热线<br/>
+							周一至周日：9:00-22:00
+						</p>
+						<p>
+							招商热线<br/>
+							400-1177-517
+						</p>
+					</div>
+				</div>
+				<div class="fc_link">
+					<dl>
+						<dt><strong>购物指南</strong></dt>
+						<dd>
+							<a href="">安全账户</a>
+							<a href="">购物流程</a>
+							<a href="">老顾客重置密码</a>
+							<a href="">生日礼物流程</a>
+							<a href="">找回密码</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><strong>物流配送</strong></dt>
+						<dd>
+							<a href="">配送说明</a>
+							<a href="">签收与验货</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><strong>付款说明</strong></dt>
+						<dd>
+							<a href="">发票制度</a>
+							<a href="">公司转账</a>
+							<a href="">在线支付</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><strong>客户服务</strong></dt>
+						<dd>
+							<a href="">退换货服务</a>
+							<a href="">联系我们</a>
+							<a href="">退款说明</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><strong>会员专区</strong></dt>
+						<dd>
+							<a href="">优惠券使用规则</a>
+							<a href="">积分制度</a>
+							<a href="">会员须知</a>
+						</dd>
+					</dl>
+				</div>
+				<div class="fc_follow">
+					<div class="qr_code">
+						<div class="qr_code_top">
+							<img src="images/img_index/dz_qrcode.jpg" alt="">
+						</div>						
+						<span>微信二维码</span>
+					</div>
+					<div class="weibo_mail">
+							<p>微博关注</p>
+							<iframe src="http://widget.weibo.com/relationship/followbutton.php?btn=red&style=2&uid=1851770484&width=136&height=24&language=zh_cn" width="136" height="24" scrolling="no" frameborder="0"></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="foot_nav">
+				<ul>
+					<li><a href="">关于我们</a></li>
+					<li><a href="">联系我们</a></li>
+					<li><a href="">客户服务</a></li>
+					<li><a href="">诚聘英才</a></li>
+					<li><a href="">商务合作</a></li>
+					<li><a href="">媒体报道</a></li>
+					<li><a href="">网站地图</a></li>
+					<li><a href="">站长招募</a></li>
+				</ul>
+			</div>
+			<div class="foot_copyright">
+				Copyright@2006-2017 湖北良品铺子电子商务有限公司 All rights Reserved<br/>
+				<a href="">鄂ICP备15022981号</a><br/>
+				<a href="">
+					<img src="images/img_index/gslogo.png" alt="">
+				</a>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="{%  static 'js/jquery-1.8.3.min.js'%}"></script>
+<script type="text/javascript" src="{%  static 'js/cookieTools.js'%}"></script>
+<script type="text/javascript" src="{%  static 'js/public.js'%}"></script>
+<script type="text/javascript">
+jQuery.fn.extend({
+		//全选按键
+		checked:function(isChecked){
+			this.each(function(){
+				this.checked = isChecked;
+			});
+		},
+		backControl:function(leaderDom){
+			let isTrue = true;
+			this.each(function(){
+				if(this.checked==false){
+					isTrue = false;	
+				}
+			});
+			leaderDom.checked = isTrue;		
+		}
+	});	
+	
+$(function(){
+	InitTopUI(); 
+	login_cookie();
+	if(document.cookie!=""){
+		getCartGoods().then(makeCartGoodsData).then(InitData);
+	}
+});
+
+//初始化数据
+function InitData(){
+	let $select_alls= $(".all_select"); //全选按钮
+	let $checkboxs = $(".cart_cont_area td :checkbox");//商品的checkbox
+	$($select_alls[0]).click(function(){
+		$checkboxs.checked($select_alls[0].checked);
+		$select_alls[1].checked=this.checked;
+		getAllMoney();
+	});
+	$($select_alls[1]).click(function(){
+		$checkboxs.checked($select_alls[1].checked);
+		$select_alls[0].checked=this.checked;
+		getAllMoney();
+	});
+
+	$checkboxs.click(function(){
+		$checkboxs.backControl($select_alls[0]);
+		$checkboxs.backControl($select_alls[1]);
+		getAllMoney();
+	});
+	
+	let $all_money=$(".all_money"); //总价
+	let $all_sub_btn=$(".cart_shop_num .sub_btn"); //- btn
+	let $all_add_btn=$(".cart_shop_num .add_btn"); //+ btn
+	let $all_shop_num=$(".cart_shop_num input");	  //数量
+	let $all_item_price=$(".single_price span");  //单价
+	let $all_item_all_price=$(".item_total b");	  //小计
+	
+	let $delete_goods=$(".cart_delete");//删除商品(按勾选删除，单个按钮)
+	let $delete_goods_items=$(".delete_goods_item");//单品删除按钮
+	$delete_goods.click(function(){
+		if(!confirm("没钱了？")){
+				return;
+		}
+		for(let i=0; i<$checkboxs.length; i++){
+			if($checkboxs[i].checked==true){
+				$($delete_goods_items[i]).trigger("click",true);
+			}
+		}
+	});
+	//绑定数量改变的事件 (加减、文字改变)
+	for(let i=0; i<$all_sub_btn.length; i++){
+		//单项删除
+		$($delete_goods_items[i]).click(function(event,isAllDelete=false){
+			if(isAllDelete==false){ //不是全部删除的时候再弹出提示框
+				if(!confirm("没钱了？")){
+					return;
+				}
+			}
+			let goodsid=$(this).parents("tr").attr("goodsid");
+			$(".cart_cont_area tbody tr").remove("tr[goodsid="+goodsid+"]");
+			$.ajax({
+				type:"get",
+				url:"php/deleteGoods.php",
+				async:true,
+				data:{
+					"vipName":getCookie("userName"),
+					"goodsId":$($delete_goods_items[i]).parents("tr").attr("goodsid")
+				},
+				success:function(msg){
+					if(msg==1){
+						console.log("删除成功");
+					}else{
+						console.log("删除失败");
+					}
+				}
+			});
+			//计算总价
+			getAllMoney();
+			//更新购物车数量显示
+			getShopCount();
+		});
+		//数量改变
+		$($all_shop_num[i]).change(function(){
+			let shop_num=parseInt($($all_shop_num[i]).val());
+			if(shop_num<=1){
+				$($all_shop_num[i]).val(1);
+			}else if(shop_num>=999){
+				$($all_shop_num[i]).val(999);
+			}
+			//计算单价
+			let single_price=parseFloat($all_item_price[i].innerText)* parseFloat($all_shop_num[i].value);
+			$($all_item_all_price[i]).text(single_price.toFixed(2));
+			//计算总价
+			getAllMoney();
+			//更新购物车数量显示
+			getShopCount();
+			//更新数据库信息
+			$.ajax({
+				type:"get",
+				url:"php/updateGoodsCount.php",
+				async:true,
+				data:{
+					"vipName":getCookie("userName"),
+					"goodsId":$(this).parents("tr").attr("goodsid"),
+					"goodsCount":$all_shop_num[i].value
+				},
+				success:function(msg){
+					if(msg==1){
+						console.log("存入数据库成功");
+					}else{
+						console.log("error");
+					}
+				}
+			});
+		});
+		$($all_sub_btn[i]).click(function(){
+			let shop_num=parseInt($($all_shop_num[i]).val());
+			if(shop_num<=1){
+				$($all_shop_num[i]).val(1);
+			}else{
+				$($all_shop_num[i]).val(shop_num-1);
+			}
+			//计算单品价
+			let single_price=parseFloat($all_item_price[i].innerText)* parseFloat($all_shop_num[i].value);
+			$($all_item_all_price[i]).text(single_price.toFixed(2));
+			//计算总价
+			getAllMoney();
+			//更新购物车数量显示
+			getShopCount();
+			//更新数据库信息
+			$.ajax({
+				type:"get",
+				url:"php/updateGoodsCount.php",
+				async:true,
+				data:{
+					"vipName":getCookie("userName"),
+					"goodsId":$(this).parents("tr").attr("goodsid"),
+					"goodsCount":$all_shop_num[i].value
+				},
+				success:function(msg){
+					if(msg==1){
+						console.log("存入数据库成功");
+					}else{
+						console.log("error");
+					}
+				}
+			});
+		});
+		$($all_add_btn[i]).click(function(){
+			let shop_num=parseInt($($all_shop_num[i]).val());
+			if(shop_num>=999){
+				$($all_shop_num[i]).val(999); 
+			}else{
+				$($all_shop_num[i]).val(shop_num+1);
+			}
+			//计算单品价
+			let single_price=parseFloat($all_item_price[i].innerText)*parseFloat($all_shop_num[i].value);
+			$($all_item_all_price[i]).text(single_price.toFixed(2));
+			//计算总价
+			getAllMoney();
+			//更新购物车数量显示
+			getShopCount();
+			//更新数据库信息
+			$.ajax({
+				type:"get",
+				url:"php/updateGoodsCount.php",
+				async:true,
+				data:{
+					"vipName":getCookie("userName"),
+					"goodsId":$(this).parents("tr").attr("goodsid"),
+					"goodsCount":$all_shop_num[i].value
+				},
+				success:function(msg){
+					if(msg==1){
+						console.log("存入数据库成功");
+					}else{
+						console.log("error");
+					}
+				}
+			});
+		});
+	}
+	//计算总金额
+	function getAllMoney(){
+		let total_price=0;	
+		let $checkboxs = $(".cart_cont_area td :checkbox");
+		for(let i=0; i<$checkboxs.length; i++){
+			if($checkboxs[i].checked==true){
+				total_price+=parseFloat($all_item_all_price[i].innerText);
+			}
+		}
+		$all_money.text(total_price.toFixed(2));
+	}
+	//进入窗口先计算一遍 ,在cookie读取之后计算
+	getAllMoney();
+	getShopCount();
+}
+
+//更新购物车的数量
+function getShopCount(){
+	let $all_shop_num=$(".cart_shop_num input");
+	let count=0;
+	for(let i=0;i<$all_shop_num.length;i++){
+		count+=parseInt($($all_shop_num[i]).val());
+	}
+	$(".buy_num b").text(count);//显示一下购物车信息
+}
+//获取购物车数据
+function getCartGoods(){
+	let p=new Promise(function(resolve,reject){
+		$.ajax({
+			type:"get",
+			url:"php/getShoppingCart.php",
+			async:true,
+			data:{
+				"vipName":getCookie("userName")
+			},
+			success:function(msg){
+				resolve(msg);
+			}
+		});
+	});
+	return p;
+}
+//显示购物车商品
+function makeCartGoodsData(goods_list){
+	let goods_list_arr=eval(goods_list);
+	//动态创建商品
+	for(let i=0; i<goods_list_arr.length; i++){
+		//每个商品的tr
+		$tr_goods_tr=$("<tr></tr>");
+		$tr_goods_tr.attr("goodsid",goods_list_arr[i].goodsId);
+		$tr_goods_checkbox=$('<td><input type="checkbox" checked/></td>');//checkbox
+		 //图片
+		$li_goods_img=$('<td><a href="javascript:;"><img class="shop_img"/></a></td>');
+		$li_goods_img.children().children().prop("src",goods_list_arr[i].goodsImg); //图片
+		//名称
+		$li_goods_name=$("<td><a></a></td>");
+		$li_goods_name.children("a").text(goods_list_arr[i].goodsName);//名称
+		$li_goods_name.children("a").prop({
+			"title":goods_list_arr[i].goodsName,
+			"target":"_blank"
+		});
+		//价格
+		let goodsPrices=goods_list_arr[i].goodsPrice.split(".");
+		$li_goods_priceS=$('<td class="single_price">¥<span>'+goodsPrices[0]+'.'+goodsPrices[1]+'</span></td>');
+		//数量
+		$li_goods_num=$('<td><div class="cart_shop_num "><span class="sub_btn">-</span><input type="text" value="'+goods_list_arr[i].beiyong1+'" /><span class="add_btn">+</span></div></td>');
+		//单条价格
+		$li_goods_item_price=$('<td><span class="item_total">¥<b>29.90</b></span></td>');
+		//删除，移到关注
+		$li_goods_delete=$('<td><a href="javascript:;" class="delete_goods_item">删除</a><br/><a href="">移到我的关注</a></td>');
+		//添加进tr
+		$tr_goods_tr.append($tr_goods_checkbox,$li_goods_img,$li_goods_name,$li_goods_priceS,$li_goods_num,$li_goods_item_price,$li_goods_delete);
+		$(".cart_cont_area tbody").append($tr_goods_tr);
+	}
+	var p = new Promise(function(resolve,reject){
+		resolve();
+	});
+	return p;
+}
+
+
+
+
+</script>

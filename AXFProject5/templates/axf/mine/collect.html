@@ -1,0 +1,123 @@
+{% extends 'axf/mine/base.html' %}
+{% load static %}
+
+{% block linkscript%}
+<link href="http://css.winguo.com/skin/2013/mall/css/usercenter/favorite.css?v=3.4.31" type="text/css" rel="stylesheet" />
+ <script type="text/javascript" src="http://js.winguo.com/jScripts/mall/shopping/shopping.js?v=3.4.31"></script><link href="http://css.winguo.com/skin/2013/mall/css/usercenter/allOrders.css?v=3.4.31" type="text/css" rel="stylesheet"><link id="artDialog-skin" href="http://js.winguo.com/jScripts/global/art/skins/simple.css?v=3.4.31" rel="stylesheet"><link type="text/css" rel="stylesheet" href="http://js.winguo.com/jScripts/global/calendar/src/css/jscal2.css?v=3.4.31"><script type="text/javascript" src="http://js.winguo.com/jScripts/global/art/jquery.artDialog.min.js?v=3.4.31"></script><script type="text/javascript" src="http://js.winguo.com/jScripts/mall/usercenter/orders.js?v=3.4.31"></script><script src="http://js.winguo.com/jScripts/global/calendar/src/js/jscal2.js?v=3.4.31"></script><script src="http://js.winguo.com/jScripts/global/calendar/src/js/unicode-letter.js?v=3.4.31"></script><script src="http://js.winguo.com/jScripts/wenwen/wen.js?v=3.4.31"></script><style type="text/css">
+.sitesearch .logo .site_logo {float:left;width:175px;height:56px;background:url('http://css.winguo.com/themes/www/image/global/logo_v1_175x56.png') no-repeat;text-indent:-9999px;}
+</style>
+{% endblock linkscript%}
+
+
+{% block base %}
+<div id="content">
+    <div class="wPage">
+
+        <div id="uLayheader"></div>
+        <div id="uLaybody">
+
+            <div class="contentCenter">
+                <div id="WG_body" class="cls ">
+
+                    <div class="LayoutCenter">
+                        <div class="LayoutWrap">
+                        <div class="navigation">
+                            <div class="crumbs">
+                                <a href="{% url 'axf:centre' %}">我的账户</a>
+                                <a href="">个人信息管理</a><span>我的收藏</span>
+                            </div>
+                        </div>
+
+                        <div class="procategory">
+                            <div class="list">
+                                <a class="selected" href="javascript:void(0);">收藏商品</a>
+                                <a class="toleft" href="/customer/favorite?shop=1">收藏店铺</a>
+                            </div>
+                        </div>
+                        <!--[if !IE]>cate end<![endif]-->
+                      <div id="favoritebox" class="favoritebox">
+                            <div class="f-tag">
+                                <div class="hd">
+                                    <ul>
+                                        <li class="selected">我的标签</li><li>商品分类</li>
+                                    </ul>
+                                    <!--[if !IE]>
+                                    <div class="f-search">
+                                        <input type="text" class="inp-txt" name="key"><input type="submit" class="ui-btn2" name="submit" value="搜索">
+                                    </div>
+                                    <![endif]-->
+                                </div>
+
+                                <div class="bd">
+                                    <div class="item item-labels" >
+                                    	<a href="/customer/favorite">所有商品</a>
+                                                                            </div>
+
+                                    <div class="item" style="display:none;">
+                                    	<a href="/customer/favorite?is_cat=1">所有分类</a>
+                                                                            </div>
+                                </div>
+                            </div>
+                      <form id="favorite" method="post" action="/customer/favorite/item?a=delete">
+                        <div class="f-tool">
+                            <div class="f-tool-block">
+                                <input type="checkbox" id="selall" class="middle"><label for="selall" class="middle"> 全选</label> <a href="#">删除</a>
+                                <span class="WG-dis">只显示勾选项</span>
+                            </div>
+                        </div>
+                            <!--[if !IE]>filter<![endif]-->
+                            <div class="filter">
+                                <div class="cls">
+                                	<!--[if !IE]>
+                                    <a class="ui-btn-c up" href="">最新商品数<i></i></a>
+                                    <a class="ui-btn-c down" href="">热卖商品数<i></i></a>
+                                    <a class="ui-btn-c down" href="">推荐商品数<i></i></a>
+                                    <![endif]-->
+                                    <a href="/customer/favorite?order=1" class="ui-btn-c down">收藏时间<i></i></a>
+                                    <!--[if !IE]>
+                                    <a class="c-next" href="">下一页<div class="c-next-b"></div></a>
+                                    <a class="c-prev" href=""><div class="c-prev-b"></div>上一页</a>
+                                    <![endif]-->
+                                </div>
+                            </div>
+                            <!--[if !IE]>filter<![endif]-->
+                            <!--[if !IE]>列表内容<![endif]-->
+                            <div class="prolist">
+                                <ul class="cls">
+
+                                </ul>
+                                <script>
+                                    var li=$(".prolist ul li");
+                                    var z=999;
+                                    li.each(function(index) {
+                                       $(this).css("zIndex",z-index);
+                                    });
+                                </script>
+                            </div>
+                            <!--[if !IE]>列表内容<![endif]-->
+                      </form>
+                             <!--[if !IE]>分页开始<![endif]-->
+                            <div class="NextPageArea">
+                                <!--<div class="NextPageBox cls">-->
+                                <div class="cls">
+                                    <div class="PageList"><div class="badoo"></div>
+</div>
+                                </div>
+                            </div>
+                            <!--[if !IE]>分页结束<![endif]-->
+                            <div class="f-tool t-tool">
+                                <div class="f-tool-block">
+                                   <input type="checkbox" id="f-selall" class="middle"><label for="f-selall" class="middle"> 全选</label> <a href="#">删除</a>
+                                </div>
+                            </div>
+                      </div>
+                            <!--[if !IE]>内容end<![endif]-->
+                        </div>
+                    </div>
+                    <!--[if !IE]>中间和右边内容结束<![endif]-->
+                    <!--[if !IE]>左边内容开始<![endif]-->
+                    <div class="LayoutLeft">
+                        <!-- 用户左边侧边栏目  -->
+
+
+{% endblock base %}

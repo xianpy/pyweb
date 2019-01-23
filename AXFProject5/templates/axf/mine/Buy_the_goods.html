@@ -1,0 +1,167 @@
+{% extends 'axf/mine/base.html' %}
+{% load static %}
+
+{% block linkscript%}
+ <script type="text/javascript" src="http://js.winguo.com/jScripts/mall/shopping/shopping.js?v=3.4.31"></script><link href="http://css.winguo.com/skin/2013/mall/css/usercenter/allOrders.css?v=3.4.31" type="text/css" rel="stylesheet"><link id="artDialog-skin" href="http://js.winguo.com/jScripts/global/art/skins/simple.css?v=3.4.31" rel="stylesheet"><link type="text/css" rel="stylesheet" href="http://js.winguo.com/jScripts/global/calendar/src/css/jscal2.css?v=3.4.31"><script type="text/javascript" src="http://js.winguo.com/jScripts/global/art/jquery.artDialog.min.js?v=3.4.31"></script><script type="text/javascript" src="http://js.winguo.com/jScripts/mall/usercenter/orders.js?v=3.4.31"></script><script src="http://js.winguo.com/jScripts/global/calendar/src/js/jscal2.js?v=3.4.31"></script><script src="http://js.winguo.com/jScripts/global/calendar/src/js/unicode-letter.js?v=3.4.31"></script><script src="http://js.winguo.com/jScripts/wenwen/wen.js?v=3.4.31"></script><style type="text/css">
+.sitesearch .logo .site_logo {float:left;width:175px;height:56px;background:url('http://css.winguo.com/themes/www/image/global/logo_v1_175x56.png') no-repeat;text-indent:-9999px;}
+</style>
+{% endblock linkscript%}
+
+
+{% block base %}
+<div id="content" class="content">
+	<div class="wPage">
+    	<div class="cls">
+        	<!--[if !IE]>主要内容开始<![endif]-->
+            <div class="LayoutCenter">
+                <div class="LayoutWrap">
+                	<!--[if !IE]>nav<![endif]-->
+                	<div class="navigation">
+                        <div class="crumbs">
+                            <a href="{% url 'axf:centre' %}">我的账户</a>
+                            <a href="{% url 'axf:buy' %}">交易管理</a>已买到的商品
+                        </div>
+                	</div>
+                    <!--[if !IE]>nav<![endif]-->
+                    <!--[if !IE]>订单搜索开始<![endif]-->
+                    <div class="filter">
+                    	<form id="filter" data-url="http://lppz.winguo.com/customer/order/">
+                    	<ul class="cls">
+                        	<li><span>商品名称：</span><input type="text" name="itemName" value="" /></li>
+                        	<li><span>店铺名：</span><input type="text" name="makerName" value="" /></li>
+                        	<li class="three">
+								<span>评价状态：</span>
+																<select name="commentStatus">
+									<option value="ALL" >全部</option>
+									<option value="NOT" >需我评价</option>
+									<option value="HAS" >我已评价</option>
+								</select>
+							</li>
+                        	<li><span>订单编号：</span><input type="text" name="orderNumber" value="" /></li>
+                        	                        	<li><span>交易状态：</span>
+								<select name="tradeStatus">
+									<option value="ALL" selected="selected">全部</option>
+									<option value="NOT_PAID"  >等待付款</option>
+									<option value="PAID" >等待发货</option>
+									<option value="SEND" >已发货</option>
+									<option value="SUCCESS" >成功的订单</option>
+									<option value="DROP" >关闭的订单</option>
+									<option value="REFUNDING" >退款中的订单</option>
+								</select>
+							</li>
+							<li class="three">
+								<span>物流服务：</span>
+																<select name="logisticsService">
+									<option value="ALL" selected="selected">全部</option>
+									<option value="COD" >货到付款</option>
+								</select>
+							</li>
+
+                        	<li class="f_time"><span>成交时间：</span>从 <input type="text" id="startTime" name="startdate" value="" > 到 <input type="text" id="endTime" name="enddate" value=""></li>
+                            <li class="three"><button type="submit" class="submit">搜索</button> <button class="reset">重置</button></li>
+                        </ul>
+                        </form>
+                    </div>
+                    <!--[if !IE]>订单搜索结束<![endif]-->
+                    <!--[if !IE]>订单列表开始<![endif]-->
+                    <div class="o_list" id="o_list">
+                    	<div class="o_nav">
+							<ul class="cls">
+								<li class="select" >
+									<a href="">近三个月订单</a>
+								</li>
+								<li  >
+									<a href="">等待付款</a>
+								</li>
+								<li  >
+									<a href="">等待发货</a>
+								</li>
+								<li  >
+									<a href="">已发货</a>
+								</li>
+								<li  >
+									<a href="">退款中</a>
+								</li>
+                                <li  >
+									<a href="">成功的订单</a>
+								</li>
+								<li  >
+									<a href="">关闭的订单</a>
+								</li>
+								<li  >
+								    <a href="">三个月前订单</a>
+								</li>
+                            </ul>
+
+                        </div>
+                        <form action="" method="post">
+                        <table>
+                        	<colgroup>
+                            	<col class="t1">
+                            	<col class="t2">
+                            	<col class="t3">
+                            	<col class="t4">
+                            	<col class="t5">
+                            	<col class="t6">
+                            	<col class="t7">
+                            	<col class="t8">
+                            	<col class="t9">
+                            </colgroup>
+                        	<thead>
+                            	<tr class="tit">
+                                	<th colspan="2" class="tit1">商品</th>
+                                    <th>单价（元）</th>
+                                    <th>数量</th>
+                                    <th>售后</th>
+                                    <th>实付款（元）</th>
+                                    <th>交易状态</th>
+                                    <th>交易操作</th>
+                                    <th class="tit9">其他操作</th>
+                                </tr>
+                            </thead>
+							<tbody>
+                            <tr>
+                                <td colspan="9">
+                                    <center>没有符合条件的商品，请尝试其他搜索条件。90天前卖出的商品，请到
+                                        <a href="">三个月前订单</a>中查询。</center>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        </form>
+                    </div>
+                    <!--[if !IE]>订单列表结束<![endif]-->
+                    <!--[if !IE]>弹出框开始<![endif]-->
+                    <div class="o_close" id="o_close">
+                    	您确定要取消该订单吗？取消订单后，不能恢复。<br>
+                        <b>请选择取消订单的理由：</b><br>
+                        <form action="">
+                        <select name="close_cause" id="close_cause">
+							<option value="">请选择关闭理由</option>
+							<option value="6">我不想买了</option>
+							<option value="8">信息填写错误，重新拍</option>
+							<option value="9">卖家缺货</option>
+							<option value="10">同城见面交易</option>
+							<option value="11">其他原因</option>
+						</select>
+                        <input type="hidden" value="">
+                        <span style="color:red;display:none;" id="o_close_not_select">请选择关闭原因</span>
+                        </form>
+                    </div>
+                    <div class="o_close" id="o_del">
+                        <form  action="">
+                        <b>您确定要删除该订单么？</b><br>
+                        删除后，您可在订单回收站找回，或永久删除
+                        <input type="hidden" value="" name="id">
+                        </form>
+                    </div>
+                    <!--[if !IE]>弹出框结束<![endif]-->
+                </div>
+            </div>
+            <!--[if !IE]>主要内容结束<![endif]-->
+            <!--[if !IE]>左边内容<![endif]-->
+            <div class="LayoutLeft">
+            	<!-- 用户左边侧边栏目  -->
+
+
+{% endblock base %}

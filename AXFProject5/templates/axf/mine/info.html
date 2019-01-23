@@ -1,0 +1,124 @@
+{% extends 'axf/mine/base.html' %}
+{% load static %}
+
+{% block linkscript%}
+
+<link href="http://css.winguo.com/themes/userCenter/css/information/info.css?v=3.4.31" type="text/css" rel="stylesheet" />
+
+
+
+{% endblock linkscript%}
+
+
+{% block base %}
+<div id="content" class="content">
+	<div class="wPage">
+		<div id="uLayheader"></div>
+    	<div class="cls" id="WG_body">
+        	<!--[if !IE]>主要内容开始<![endif]-->
+            <div class="LayoutCenter">
+				<div class="LayoutWrap">
+					<div class="navigation">
+						<div class="crumbs">
+							<a href="{% url 'axf:centre' %}">我的账户</a>
+                            <a href="{% url 'axf:centre' %}">账户中心</a>账号信息
+						</div>
+					</div>
+										<!--[if !IE]>信息编辑<![endif]-->
+					<form method="post" id="AccountForm" action="">
+						<input type="hidden" id="user_type" value="0">
+						<div class="step-form">
+							<div class="head">基本资料
+                                <span>            <a href="">修改资料</a></span></div>
+                            <div class="page-nav-tab-wrap">
+                        <b class="page-nav-line"></b>
+                    </div>
+
+							<div class="avatar">
+								<div class="img">
+
+									<a href="" style="display:block">
+										<img src="" alt="头像"/>
+									</a>
+								</div>
+							</div>
+							<div class="item">
+								<label class="field-hd">用户账号：</label>
+								<div class="field-bd">
+									D05018D47EE197832828050C8DE426CF                                                                </div>
+							</div>
+							<div class="item">
+								<label class="field-hd">会员类型：</label>
+								<div class="field-bd">卖家</div>
+							</div>
+							<div class="item">
+								<label class="field-hd"><b>*</b>昵称：</label>
+                                <div class="field-bd">每个人都不一样</div>
+							</div>
+
+							<div class="item">
+								<label class="field-hd">真实姓名：</label>
+								<div class="field-bd">每个人都不一样</div>
+							</div>
+
+							<div class="item">
+								<label class="field-hd">QQ：</label>
+								<div class="field-bd">每个人都不一样</div>
+							</div>
+
+							<div class="item">
+								<label class="field-hd">性别：</label>
+								<div class="field-bd">每个人都不一样</div>
+							</div>
+
+							<div class="item">
+								<label class="field-hd">邮箱：</label>
+								<div class="field-bd">   sac</div>
+							</div>
+
+							<div class="item">
+								<label class="field-hd">手机号码：</label>
+								<div class="field-bd">  sad</div>
+							</div>
+
+							<div class="item">
+								<label class="field-hd">身份证号码：</label>
+								<div class="field-bd">hjj</div>
+							</div>
+
+							<div class="item">
+								<label class="field-hd">所在地：</label>
+                                <div class="field-bd">dfsf</div>
+							</div>
+
+							<div class="item">
+                                <label class="field-hd">详细地址：</label>
+                                <div class="field-bd">详细地址30个字符以内</div>
+							</div>
+
+							<div class="item">
+								<label class="field-hd">婚姻状况：</label>
+                                <div class="field-bd">fd</div>
+							</div>
+
+							<div class="item">
+								<label class="field-hd">月收入：</label>
+								<div class="field-bd">fd</div>
+							</div>
+
+							<div class="item">
+								<label class="field-hd">兴趣爱好：</label>
+								<div class="field-bd">dd</div>
+							</div>
+						</div>
+					</form>
+					<!--[if !IE]>信息编辑结束<![endif]-->
+				</div>
+			</div>
+            <!--[if !IE]>主要内容开始<![endif]-->
+            <!--[if !IE]>左边内容<![endif]-->
+            <div class="LayoutLeft">
+            	<!-- 用户左边侧边栏目  -->
+
+
+{% endblock base %}

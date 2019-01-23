@@ -1,0 +1,268 @@
+{% extends 'axf/mine/base.html' %}
+{% load static %}
+
+{% block linkscript%}
+
+<link href="http://css.winguo.com/themes/userCenter/css/information/info.css?v=3.4.31" type="text/css" rel="stylesheet" />
+
+
+
+{% endblock linkscript%}
+
+
+{% block base %}
+<div id="content" class="content">
+	<div class="wPage">
+		<div id="uLayheader"></div>
+    	<div class="cls" id="WG_body">
+        	<!--[if !IE]>主要内容开始<![endif]-->
+            <div class="LayoutCenter">
+				<div class="LayoutWrap">
+					<div class="navigation">
+						<div class="crumbs">
+							<a href="{% url 'axf:centre' %}">我的账户</a>
+                            <a href="{% url 'axf:centre' %}">账户中心</a>账号信息
+						</div>
+					</div>
+										<!--[if !IE]>信息编辑<![endif]-->
+					<form method="post" id="AccountForm" action="">
+						<input type="hidden" id="user_type" value="0">
+						<div class="step-form">
+							<div class="head">基本资料</div>
+							<div class="avatar">
+								<div class="img">
+
+									<a href="" style="display:block">
+										<img src="" alt="头像"/>
+									</a>
+								</div>
+							</div>
+							<div class="item">
+								<label class="field-hd">用户账号：</label>
+								<div class="field-bd">
+									D05018D47EE197832828050C8DE426CF                                                                </div>
+							</div>
+							<div class="item">
+								<label class="field-hd">会员类型：</label>
+								<div class="field-bd">卖家</div>
+							</div>
+							<div class="item">
+								<label class="field-hd"><b>*</b>昵称：</label>
+								<div class="field-bd">
+									<input type="text" name="nickname" value="" class="nickname ui-txt-bs">
+									<span class="middle s-tip"></span>
+									<div class="ui-form-validate" id="nickname-msg">
+										<div class="ui-feedback">
+											<div class="ui-feedback-inner ui-feedback-error">
+												<p>4-20个字符，可由中英文、数字、"_"、"-"组成</p><s class="ui-feedback-icon"></s>
+											</div>
+											<s class="ui-feedback-arrow ui-feedback-arrow-top"></s>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="item">
+								<label class="field-hd">真实姓名：</label>
+																<div class="field-bd">
+									<input type="text" name="realname" value="每个人都不一样" class="realname ui-txt-bs">
+									<span class="middle s-tip"></span>
+									<div class="ui-form-validate" id="realname-msg">
+										<div class="ui-feedback">
+											<div class="ui-feedback-inner ui-feedback-error">
+												<p>请输入真实姓名，20个英文或10个汉字</p><s class="ui-feedback-icon"></s>
+											</div>
+											<s class="ui-feedback-arrow ui-feedback-arrow-top"></s>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="item">
+								<label class="field-hd">QQ：</label>
+																<div class="field-bd">
+									<input type="text" name="per_qq" value="" class="per_qq ui-txt-bs">
+									<span class="middle s-tip"></span>
+                                        <div class="ui-form-validate" id="qqname-msg">
+                                        <div class="ui-feedback">
+                                            <div class="ui-feedback-inner ui-feedback-error">
+                                                <p>请输入正确的QQ号码，5-10个数字</p><s class="ui-feedback-icon"></s>
+                                            </div>
+                                            <s class="ui-feedback-arrow ui-feedback-arrow-top"></s>
+                                        </div>
+                                    </div>
+								</div>
+							</div>
+
+							<div class="item">
+								<label class="field-hd"><!--<b>*</b>-->性别：</label>
+																<div class="field-bd">
+									<input type="radio" name="sex" value="0" id="sex-sercet"  checked="checked" class="radio" />
+									<label for="sex-sercet">保密</label>
+									<input type="radio" name="sex" value="1" id="sex-man"   class="radio" />
+									<label for="sex-man">男</label>
+									<input type="radio" name="sex" value="2" id="sex-woman"   class="radio" />
+									<label for="sex-woman">女</label>
+								</div>
+							</div>
+							<div class="item">
+								<label class="field-hd"><!--<b>*</b>-->邮箱：</label>
+																<div class="field-bd">
+																		尚未绑定
+									<span class="edit"><a href="http://lppz.passport.winguo.com/account/mail/step1/" target="_blank">绑定邮箱</a></span>
+																	</div>
+							</div>
+							<div class="item">
+																<label class="field-hd"><!--<b>*</b>-->手机号码：</label>
+								<div class="field-bd">
+																		尚未绑定
+									<span class="edit"><a href="http://lppz.passport.winguo.com/account/phone/bind/" target="_blank">绑定手机</a></span>
+																	</div>
+							</div>
+							<div class="item">
+								<label class="field-hd">身份证号码：</label>
+								<div class="field-bd">
+																		<input type="text" name="identity" class="identity ui-txt-max" value="" />
+									<span class="middle s-tip">居民身份证号码为15或18位</span>
+									<div class="ui-form-validate" id="identity-msg">
+										<div class="ui-feedback">
+											<div class="ui-feedback-inner ui-feedback-error">
+												<p>请输入正确的身份证号码！</p><s class="ui-feedback-icon"></s>
+											</div>
+											<s class="ui-feedback-arrow ui-feedback-arrow-top"></s>
+										</div>
+									</div>
+								</div>
+							</div>
+							 <div class="item">
+								<label class="field-hd">身份证正面：</label>
+								<div class="field-bd">
+									                                    <div data-uploadaction="http://img.winguo.com/upload_only?hash=1548146177|/card|3a24ed4ec903c54a84929009f0f52e02&return_url=http%3A%2F%2Flppz.winguo.com%2Fcustomer%2Faccount%2Finfo%3Fa%3Ddisplay_json" data-max-length="1" data-name="card_pic" class="ui-fileupload ui-fileupload-single">
+                                        <div class="ui-fileupload-preview">
+                                                                               </div>
+                                        <div class="WG-fileupload-fileValue">
+                                        <input type="hidden" value="" name="card_pic">
+                                        </div>
+                                        <div class="ui-fileupload-action" style="text-align:left;vertical-align:middle;">
+                                            <span class="ui-fileupload-btn">
+                                            <input type="file" name="Filedata" id="Filedata">
+                                            </span>
+                                        </div>
+                                    </div>
+								</div>
+							</div>
+							<div class="item">
+								<label class="field-hd">身份证反面：</label>
+								<div class="field-bd">
+									                                    <div data-uploadaction="http://img.winguo.com/upload_only?hash=1548146177|/card|3a24ed4ec903c54a84929009f0f52e02&return_url=http%3A%2F%2Flppz.winguo.com%2Fcustomer%2Faccount%2Finfo%3Fa%3Ddisplay_json" data-max-length="1" data-name="card_pic_back" class="ui-fileupload ui-fileupload-single">
+                                        <div class="ui-fileupload-preview">
+                                                                                </div>
+                                        <div class="WG-fileupload-fileValue">
+                                        <input type="hidden" value="" name="card_pic_back">
+                                        </div>
+                                        <div class="ui-fileupload-action" style="text-align:left;vertical-align:middle;">
+                                            <span class="ui-fileupload-btn">
+                                            <input type="file" name="Filedata" id="Filedata">
+                                            </span>
+                                        </div>
+                                    </div>
+								</div>
+							</div>
+							<div class="item">
+								<label class="field-hd">所在地：</label>
+																<div class="field-bd">
+									<div class="select-onbox" id="address" data-url="http://js.winguo.com/jScripts/global/cityData.json" data-required="true">
+                                    	<select name="prov" class="prov" data-value="0"></select>
+                                        <select name="city" class="city" data-value="0"></select>
+                                        <select name="area" class="area" data-value="0"></select>
+                                        <select name="town" class="town" data-value="0"></select>
+									</div>
+																		<div class="address-area">
+										<input type="text" name="address" class="address ui-txt-max" value="" />
+										<span class="middle s-tip">详细地址30个字符以内</span>
+										<div class="ui-form-validate" id="address-msg">
+											<div class="ui-feedback">
+												<div class="ui-feedback-inner ui-feedback-error">
+													<p>详细地址30个字符以内</p><s class="ui-feedback-icon"></s>
+												</div>
+												<s class="ui-feedback-arrow ui-feedback-arrow-top"></s>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+
+						<div class="step-form">
+							<div class="head">选填资料</div>
+							<div class="item">
+																<label class="field-hd">生日：</label>
+								<div class="field-bd">
+									<div class="select-onbox">
+										<select class="year" data-default="0000"></select>
+										<span>年</span>
+										<select class="month" data-default="00"></select>
+										<span>月</span>
+										<select class="day" data-default="00"></select>
+										<span>日</span>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<label class="field-hd">婚姻状况：</label>
+																<div class="field-bd">
+									<input type="radio" name="marry" value="3" id="marry-not"  class="radio"/>
+									<label for="marry-not">保密</label>
+									<input type="radio" name="marry" value="0" id="marry-has" checked="checked" class="radio" />
+									<label for="marry-has">未婚</label>
+									<input type="radio" name="marry" value="1" id="marry-secret"  class="radio"/>
+									<label for="marry-secret">已婚</label>
+								</div>
+							</div>
+							<div class="item">
+								<label class="field-hd">月收入：</label>
+								<div class="field-bd">
+									<div class="select-onbox">
+																				<select name="icome" class="icome">
+											<option value="0" selected="selected" >无收入</option>
+											<option value="1"  >2000元以下</option>
+											<option value="2"  >2000-3999元</option>
+											<option value="3"  >4000-5999元</option>
+											<option value="4"  >6000-7999元</option>
+											<option value="5"  >8000元以上</option>
+										</select>
+									</div>
+
+								</div>
+							</div>
+							<div class="item">
+								<label class="field-hd">兴趣爱好：</label>
+								<div class="field-bd">
+																		<textarea class="interest" name="interest"></textarea>
+									<div class="ui-form-validate" id="interest-msg">
+										<div class="ui-feedback">
+											<div class="ui-feedback-inner ui-feedback-error">
+												<p>兴趣爱好100个字符以内</p><s class="ui-feedback-icon"></s>
+											</div>
+											<s class="ui-feedback-arrow ui-feedback-arrow-top"></s>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="AccountFooter">
+							<div class="FormSubmit"><button type="submit"></button></div>
+						</div>
+					</form>
+					<!--[if !IE]>信息编辑结束<![endif]-->
+				</div>
+			</div>
+            <!--[if !IE]>主要内容开始<![endif]-->
+            <!--[if !IE]>左边内容<![endif]-->
+            <div class="LayoutLeft">
+            	<!-- 用户左边侧边栏目  -->
+
+
+{% endblock base %}

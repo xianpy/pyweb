@@ -1,0 +1,1111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>良品铺子官方商城-休闲零食网购首选（LPPZ.COM）- 品质保障、配送及时、放心服务、轻松购物!</title>
+	<meta name="description" content="良品铺子LPPZ.COM-专业的休闲食品网上购物商城，在线销售肉脯鱼干、果干果脯、糕点糖果、素食山珍、茶水饮料、进口食品、礼盒等数百种优质食品。便捷、诚信的服务，为您提供愉悦的休闲食品网上购物体验! ">
+	<meta name="Keywords" content="网上商城,休闲零食，美食，牛肉干，鱼干，果干果脯，糕点糖果，素食山珍，茶水饮料，进口食品，礼盒，良品铺子">
+</head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/swiper.min.css'%}">
+<link rel="stylesheet" href="{% static 'css/public.css'%}">
+<link rel="stylesheet" href="{% static 'css/index.css'%}">
+
+<body>
+	<!-- toolbar -->
+	<div class="toolbar">
+		<div class="toolbar_content wide">
+			<!--未登录的显示-->
+			<ul class="toolbar_content_left">
+				<li>欢迎来到良品铺子官方商城！</li>
+                <li><a href="{%  url 'axf:login' %}">[登录]<span></span></a></li>
+				<li><a href="{%  url 'axf:register' %}">[注册]</a></li>
+
+				<li><a href="">支付宝快捷登录</a></li>
+				<li><a href="">qq登录</a></li>
+				<li><a href="">微博登录</a></li>
+			</ul>
+			<!--登录的显示-->
+			<div class="toolbar_content_left_logined">
+				<p>
+					<span>您好</span>
+					<a href="" class="toolbar_username"></a>
+					<span>,</span>
+				</p>
+				<p>欢迎来到良品铺子官方商城！</p>
+				<a href="javascript:;" class="toolbar_quit">[退出]</a>
+			</div>
+			<ul class="toolbar_content_right">
+				<li class="myInfo_li">
+					<a href="" class="myInfo ">我的良品<i class="arrow"></i></a>
+					<div class="myInfo_hover">
+						<div class="myInfo_top">
+							<div class="user_head">
+								<a href=""><img src="images/img_index/avatar.png" alt=""></a>
+							</div>
+							<a href="">您好，请登录</a>
+						</div>
+						<ul class="myInfo_mid">
+							<li><a href="">我的订单</a></li>
+							<li><a href="">我的关注</a></li>
+							<li><a href="">我的优惠券</a></li>
+							<li><a href="">我的积分</a></li>
+							<li><a href="">签到有好礼</a></li>
+							<li><a href="">购物指南</a></li>
+						</ul>
+						<div class="myInfo_bottom">
+							<p>最近浏览 <span><a href="" style="color:#555">更多></a></span></p>
+						</div>
+					</div>
+				</li>
+				<li class="attention_li">
+					<a href="">关注良品</a>
+					<div class="attention">
+						<div class="wb">
+							<div class="wb-tit">
+								关注微博
+							</div>
+							<div class="wb-plus">
+								<iframe src="http://widget.weibo.com/relationship/followbutton.php?btn=red&style=2&uid=1851770484&width=136&height=24&language=zh_cn" width="136" height="24" scrolling="no" frameborder="0"></iframe>
+							</div>
+						</div>
+						<div class="attention_mid">
+							<img src="images/img_index/dz_qrcode.jpg" alt="">
+						</div>
+						<div class="attention_bottom">
+							<img src="images/img_index/weixin.png" alt="">
+							<div>
+								<p>微信扫一扫</p>
+								<p>优惠随身携带!</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li><a href="">官方网站</a></li>
+				<li><p><span class="tel_img"></span>全国订购热线：<span class="tel_num">400-1177-517</span></p></li>
+				<li><a href="">在线客服 <i class="chat"></i></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- header -->
+	<div class="header clear_float">
+		<div class="header_main">
+			<div class="main_logo">
+				<a href="#">良品铺子-BESTORE</a>
+			</div>
+			<div class="main_search">
+				<div class="search_box">
+					<p>
+						热门搜索：
+						<a href=""><span>松子</span></a>
+						<a href="">牛肉</a>
+						<a href="">开心果</a>
+						<a href="">核桃</a>
+						<a href="">话梅</a>
+						<a href="">花生瓜子</a>
+					</p>
+                    <form action="{% url 'axf:search' %}" method="get">
+                        <input class="search_bar" name="search" type="text" placeholder="商品搜索" />
+                        <input class="search_btn" type="submit">
+                    </form>
+				</div>
+			</div>
+			<div class="main_buy">
+				<a href="javascript:;" class="go_cart">购物车</a>
+				<span class="buy_num"><b>0</b></span>
+				<div class="buy_show">
+					<p>最近加入的商品</p>
+					<table>
+						<tbody>
+
+						</tbody>
+					</table>
+					<div class="buy_show_bottom">
+						<div class="buy_right clear_float">
+							<p>共计<span class="cart_shop_count">0</span>件商品，共计<span>¥<b class="cart_shop_money">0.00</b></span></p>
+							<a href="javascript:;" class="go_cart">去购物车结算</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="shop_menu">
+			<div class="menu_center">
+				<a href="">上新尝鲜</a>
+			</div>
+		</div>
+	</div>
+	<!-- nav -->
+	<div class="nav">
+		<div class="nav_content">
+			<div class="menu_pos">
+				<div class="menu">
+					<a href="">
+						商品分类<i class="icon"></i>
+					</a>
+					<ul class="menu_list">
+                        {% for item in leftSlider %}
+                            <li><a href=""><i></i>{{ item.typename }}</a></li>
+                        {% endfor %}
+
+{#						<li><a href=""><i></i>坚果炒货</a></li>#}
+{#						<li><a href=""><i></i>肉脯鱼干</a></li>#}
+{#						<li><a href=""><i></i>果干果脯</a></li>#}
+{#						<li><a href=""><i></i>糕点糖果</a></li>#}
+{#						<li><a href="search.html"><i></i>素食山珍</a></li>#}
+{#						<li><a href=""><i></i>花茶饮品</a></li>#}
+{#						<li><a href=""><i></i>进口食品</a></li>#}
+{#						<li><a href=""><i></i>精选礼盒</a></li>#}
+{#						<li><a href=""><i></i>当季热销</a></li>#}
+					</ul>
+					<div class="menu_show">
+
+					</div>
+				</div>
+			</div>
+
+			<!-- 轮播图 -->
+			<div class="banner">
+				<div class="swiper-container">
+				    <div class="swiper-wrapper">
+{#				        <div class="swiper-slide"><img src="images/img_index/banner_01.jpg" alt=""></div>#}
+{#				        <div class="swiper-slide"><img src="images/img_index/banner_02.jpg" alt=""></div>#}
+{#				        <div class="swiper-slide"><img src="images/img_index/banner_03.jpg" alt=""></div>#}
+{#						<div class="swiper-slide"><img src="images/img_index/banner_04.jpg" alt=""></div>#}
+{#						<div class="swiper-slide"><img src="images/img_index/banner_05.jpg" alt=""></div> #}
+                        {% for item in wheelsList %}
+                            <div class="swiper-slide">
+                                <a href="#"><img src="{{ item.img }}" alt=""></a>
+                            </div>
+                        {% endfor %}
+
+				    </div>
+			   		<!-- 分页器 -->
+			    	 <div class="swiper-pagination"></div>
+
+			   		<!-- 导航按钮 -->
+ 					<div class="swiper-button-prev"></div>
+				    <div class="swiper-button-next"></div>
+				</div>
+			</div>
+			<!-- 轮播图结束 -->
+			<div class="nav_right">
+                {% for item in mustbuyList %}
+                    <img src="{{ item.img }}" alt="">
+                {% endfor %}
+
+{#				<img src="images/img_index/shop_08.jpg" alt="">#}
+{#				<img src="images/img_index/shop_11.jpg" alt="">#}
+			</div>
+		</div>
+	</div>
+	<!-- shop -->
+	<div class="shop">
+		<!-- 折扣 -->
+		<ul class="discounts">
+            {% for item in shop4 %}
+                <li>
+                    <h3 class="shop_tit">优惠专区</h3>
+                    <a href=""><img src="{{ item.img }}" alt=""></a>
+                </li>
+            {% endfor %}
+
+{#			<li>#}
+{#				<h3 class="shop_tit">满50减10</h3>#}
+{#                <a href=""><img src="{{ shop4.first.img}}" alt=""></a>#}
+{#				<a href=""><img src="images/img_index/shop_01.jpg" alt=""></a>#}
+{#			</li>#}
+{#			<li>#}
+{#				<h3 class="shop_tit">满100减30</h3>#}
+{#				<a href=""><img src="images/img_index/shop_02.jpg" alt=""></a>#}
+{#			</li>#}
+{#			<li>#}
+{#				<h3 class="shop_tit">满200减50</h3>#}
+{#				<a href=""><img src="images/img_index/shop_07.jpg" alt=""></a>#}
+{#			</li>#}
+{#			<li class="last_li">#}
+{#				<h3 class="shop_tit">先领券再购物</h3>#}
+{#				<a href=""><img src="images/img_index/shop_12.jpg" alt=""></a>#}
+{#			</li>#}
+		</ul>
+		<!-- 活动 -->
+		<div class="shop_active" id="active_target">
+			<div class="active_tit clear_float">
+
+                {% for item in leftSlider %}
+                    {% if item.id < 2 %}
+                        <h3  class="shop_tit">{{ item.typename }}</h3>
+                        <ul class="active_list">
+                    {% endif %}
+                {% endfor %}
+                {% for item in leftSlider %}
+                    {% if item.id > 0 and item.id < 4 %}
+                        {% if item.id == 1 %}
+                           <li><a id="active_focus" href="">{{ item.typename }}</a></li>
+                        {% else %}
+                            <li><a href="">{{ item.typename }}</a></li>
+                        {% endif %}
+{#                        <li><a href="">6月TOP榜</a></li>#}
+{#                        <li><a href="">新品尝鲜</a></li>#}
+                    {% endif %}
+                {% endfor %}
+
+
+{#                    <li><a id="active_focus" href="">大促特惠</a></li>#}
+{#                    <li><a href="">6月TOP榜</a></li>#}
+{#                    <li><a href="">新品尝鲜</a></li>#}
+
+				</ul>
+			</div>
+			<ul class="active_shop_list">
+                {% for item in productList_top5 %}
+                    <li><a href=""><img src="{{ item.productimg }}" alt=""></a></li>
+                {% endfor %}
+
+				<li><a href=""><img src="{% static 'images/img_index/shop_10.jpg' %}" alt=""></a></li>
+				<li><a href=""><img src="{% static 'images/img_index/shop_09.jpg' %}" alt=""></a></li>
+				<li><a href=""><img src="{% static 'images/img_index/shop_04.jpg' %}" alt=""></a></li>
+				<li><a href=""><img src="{% static 'images/img_index/shop_05.jpg' %}" alt=""></a></li>
+				<li><a href=""><img src="{% static 'images/img_index/shop_03.jpg' %}" alt=""></a></li>
+			</ul>
+		</div>
+		<!-- 1F -->
+		<div class="one_floor" id="first_floor">
+			<div class="active_tit_floor">
+				<h3  class="shop_tit_floor"><span>1F</span>牛奶花茶</h3>
+				<ul class="active_list_floor">
+                    <li><a  id="active_list_floor_focus" href="{% url 'axf:go_search' '4005722' %}">花草茶</a></li>
+{#                    {% for childname,childid in child_dict.items %}#}
+{#                        {% if childid == childtypeid %}#}
+{#                        <li><a href="{% url 'axf:home' foodtypeid childid '0'%}" id="active_focus">{{ childname }}</a></li>#}
+{#                        {% else %}#}
+{#                        <li><a href="{% url 'axf:home' foodtypeid childid '0'%}">{{ childname }}</a></li>#}
+{#                        {% endif %}#}
+{#                    {% endfor %}#}
+{#					<li><a  id="active_list_floor_focus" href="">嗑壳坚果</a></li>#}
+{#					<li><a href="">果果仁仁</a></li>#}
+{#					<li><a href="">特惠炒货</a></li>	#}
+				</ul>
+				<a href="" class="more_shop">更多商品></a>
+			</div>
+			<ul class="one_floor_ul">
+{#				<li><a href=""><img src="" alt=""></a></li>#}
+				<li><a href=""><img src="{% static 'images/img_index/1F.jpg' %}" alt=""></a></li>
+
+				<li>
+					<ul class="third_shop_list">
+                        {% for goods in productList1 %}
+						   <li>
+                                <a href="{% url 'axf:market1' goods.productid %}"><img src="{{ goods.productimg }}" alt=""></a>
+                                <div class="shop_list_mask">
+                                    <a href="">{{ goods.productname }}</a>
+                                    <span class="shop_list_price">
+                                        <small>￥</small>{{ goods.price }}
+                                    </span>
+                                </div>
+						    </li>
+						{% endfor %}
+
+
+
+{#                        <li>#}
+{#							<a href="shop.html"><img src="images/img_index/list_1_01.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="shop.html">伊朗开心果190g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small></small>25.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_1_02.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">碧根果椒盐味190g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>19.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_1_03.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">东北红松218g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>26.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_1_04.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">奶香夏威夷果120g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>15.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_1_05.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">【良品铺子】小米锅巴  麻辣味 90g*2</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>10.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li></li>#}
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--2F-->
+		<div class="one_floor" id="second_floor">
+			<div class="active_tit_floor">
+				<h3  class="shop_tit_floor"><span>2F</span>糖果巧克力</h3>
+                <ul class="active_list_floor">
+					<li><a  id="active_list_floor_focus" href="{% url 'axf:go_search' '4005706' %}">巧克力</a></li>
+					<li><a href="{% url 'axf:go_search' '4009548' %}">糖果</a></li>
+				</ul>
+{#				<ul class="active_list_floor">#}
+{#                    {% for childname,childid in child_dict.items %}#}
+{#                        {% if childid == childtypeid %}#}
+{#                            <li><a id="active_list_floor_focus" href="{% url 'axf:home' foodtypeid childtypeid '0'%}">{{ childname }}</a></li>#}
+{#                        {% else %}#}
+{#                            <li><a href="{% url 'axf:home' foodtypeid childtypeid '0' %}">{{childname}}</a></li>#}
+{#                        {% endif %}#}
+{#                    {% endfor %}#}
+
+
+{#					<li><a  id="active_list_floor_focus" href="">全部分类</a></li>#}
+{#					<li><a href="">进口水果</a></li>#}
+{#					<li><a href="">国产水果</a></li>	#}
+				</ul>
+				<a href="" class="more_shop">更多商品></a>
+			</div>
+			<ul class="one_floor_ul">
+				<li><a href=""><img src="{% static 'images/img_index/2F.jpg' %}" alt=""></a></li>
+
+				<li>
+					<ul class="third_shop_list">
+						{% for goods in productList2 %}
+						   <li>
+                                <a href="{% url 'axf:market1' goods.productid %}"><img src="{{ goods.productimg }}" alt=""></a>
+                                <div class="shop_list_mask">
+                                    <a href="">{{ goods.productname }}</a>
+                                    <span class="shop_list_price">
+                                        <small>￥</small>{{ goods.price }}
+                                    </span>
+                                </div>
+						    </li>
+						{% endfor %}
+
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_2_02.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">香辣猪尾 238g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>35.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_2_03.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">脆骨香辣味 150g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>25.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_2_04.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">迷你烤香肠（香辣味） 290g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>33.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#						</li>							#}
+{#						<li>#}
+{#						</li>#}
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--3F-->
+		<div class="one_floor" id="three_floor">
+			<div class="active_tit_floor">
+				<h3  class="shop_tit_floor"><span>3F</span>水果干货</h3>
+				<ul class="active_list_floor">
+					<li><a  id="active_list_floor_focus" href="{% url 'axf:go_search' '4010989' %}">蔬菜干类</a></li>
+					<li><a href="{% url 'axf:go_search' '4010987' %}">山楂类</a></li>
+					<li><a href="{% url 'axf:go_search' '4010985' %}">果干类</a></li>
+				</ul>
+				<a href="" class="more_shop">更多商品></a>
+			</div>
+			<ul class="one_floor_ul">
+				<li><a href=""><img src="{% static 'images/img_index/3F.jpg' %}" alt=""></a></li>
+
+				<li>
+					<ul class="third_shop_list">
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_3_01.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">菠萝片（100g）（电商专供新包装）</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>10.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+                        {% for goods in productList3 %}
+						    <li>
+                                <a href="{% url 'axf:market1' goods.productid %}"><img src="{{ goods.productimg }}" alt=""></a>
+                                <div class="shop_list_mask">
+                                    <a href="">{{ goods.productname }}</a>
+                                    <span class="shop_list_price">
+                                        <small>￥</small>{{ goods.price }}
+                                    </span>
+                                </div>
+						    </li>
+						{% endfor %}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_3_02.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">什锦果干 506g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>39.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_3_03.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">蜂蜜味樱桃 80g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>15.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_3_04.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">柿饼280g（电商专供）</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>26.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_3_05.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">泰国芒果干 108g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>12.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>							#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_3_06.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">冻干红毛丹 30g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>12.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>#}
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--4F-->
+		<div class="one_floor" id="four_floor">
+			<div class="active_tit_floor">
+				<h3  class="shop_tit_floor"><span>4F</span>零食热卖</h3>
+				<ul class="active_list_floor">
+					<li><a  id="active_list_floor_focus" href="{% url 'axf:go_search' '4005711' %}">肉干肉脯</a></li>
+					<li><a href="{% url 'axf:go_search' '4010993' %}">休闲零食</a></li>
+					<li><a href="{% url 'axf:go_search' '4005709' %}">蜜饯果脯</a></li>
+					<li><a href="{% url 'axf:go_search' '4005712' %}">坚果炒货</a></li>
+					<li><a href="{% url 'axf:go_search' '4005707' %}">饼干糕点</a></li>
+					<li><a href="{% url 'axf:go_search' '4005707' %}">饼干蛋糕</a></li>
+				</ul>
+				<a href="" class="more_shop">更多商品></a>
+			</div>
+			<ul class="one_floor_ul">
+				<li><a href=""><img src="{% static 'images/img_index/4F.jpg' %}" alt=""></a></li>
+
+				<li>
+					<ul class="third_shop_list">
+						{% for goods in productList4 %}
+						    <li>
+                                <a href="{% url 'axf:market1' goods.productid %}"><img src="{{ goods.productimg }}" alt=""></a>
+                                <div class="shop_list_mask">
+                                    <a href="">{{ goods.productname }}</a>
+                                    <span class="shop_list_price">
+                                        <small>￥</small>{{ goods.price }}
+                                    </span>
+                                </div>
+						    </li>
+						{% endfor %}
+
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_4_02.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">Q爽豆干（麻辣味）188g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>7.<small>50</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_4_03.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">鱼豆腐香辣味 170g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>9.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_4_04.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">千页豆腐（麻辣味）（200g）</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>8.<small>28</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_4_04.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">鸡蛋干酱香味 158g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>9.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>							#}
+{#						<li></li>#}
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--5F-->
+{#		<div class="one_floor" id="five_floor">#}
+{#			<div class="active_tit_floor">#}
+{#				<h3  class="shop_tit_floor"><span>5F</span>糕点糖果</h3>#}
+{#				<ul class="active_list_floor">#}
+{#					<li><a  id="active_list_floor_focus" href="">糕点系列</a></li>#}
+{#					<li><a href="">饼干系列</a></li>#}
+{#					<li><a href="">糖果系列</a></li>	#}
+{#				</ul>#}
+{#				<a href="" class="more_shop">更多商品></a>#}
+{#			</div>#}
+{#			<ul class="one_floor_ul">#}
+{#				<li><a href=""><img src="images/img_index/5F.jpg" alt=""></a></li>#}
+{#				<li><a href=""><img src="images/img_index/5F_aside.jpg" alt=""></a></li>#}
+{#				<li>#}
+{#					<ul class="third_shop_list">#}
+{#                        {% for goods in productList5 %}#}
+{#                            <li>#}
+{#                                <a href=""><img src="{{ goods.productimg }}" alt=""></a>#}
+{#                                <div class="shop_list_mask">#}
+{#                                    <a href="">{{ goods.productname }}</a>#}
+{#                                    <span class="shop_list_price">#}
+{#                                        <small>￥</small>{{ goods.price }}#}
+{#                                    </span>#}
+{#                                </div>#}
+{#						    </li>#}
+{#                        {% endfor %}#}
+
+
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_5_02.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">丽芝士纳宝帝奶酪威化饼干 200g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>14.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_5_03.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">手撕面包（电商专供）330g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>9.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_5_04.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">榛子小酥165g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>11.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li></li>							#}
+{#						<li></li>#}
+{#					</ul>#}
+{#				</li>#}
+{#			</ul>#}
+{#		</div>#}
+		<!--6F-->
+{#		<div class="one_floor" id="six_floor">#}
+{#			<div class="active_tit_floor">#}
+{#				<h3  class="shop_tit_floor"><span>6F</span>进口食品</h3>#}
+{#				<ul class="active_list_floor">#}
+{#					<li><a  id="active_list_floor_focus" href="">进口糕点</a></li>#}
+{#					<li><a href="">进口糖果</a></li>#}
+{#					<li><a href="">休闲零食</a></li>	#}
+{#				</ul>#}
+{#				<a href="" class="more_shop">更多商品></a>#}
+{#			</div>#}
+{#			<ul class="one_floor_ul">#}
+{#				<li><a href=""><img src="images/img_index/6F.jpg" alt=""></a></li>#}
+{#				<li><a href=""><img src="images/img_index/6F_aside.jpg" alt=""></a></li>#}
+{#				<li>#}
+{#					<ul class="third_shop_list">#}
+{#                        {% for goods in productList6 %}#}
+{#						    <li>#}
+{#							    <a href=""><img src="{{ goods.productimg }}" alt=""/></a>#}
+{#							    <div class="shop_list_mask">#}
+{#								    <a href="">{{ goods.productname }}</a>#}
+{#								    <span class="shop_list_price">#}
+{#									    <small>￥{{ goods.price }}</small>#}
+{#								    </span>#}
+{#							    </div>#}
+{#						    </li>#}
+{#                        {% endfor %}#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_6_02.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">养养牌冬荫功面(酸辣虾味浓汤面)</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small><small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_6_03.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">CZA燕麦芝士酥 100g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>9.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_6_04.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">CZA咸蛋黄酥 100g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>17.<small>80</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>	#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_6_05.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">南益柠檬口味威化饼干</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>15.<small>90</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>							#}
+{#						<li>#}
+{#							<a href=""><img src="images/img_index/list_6_06.jpg" alt=""></a>#}
+{#							<div class="shop_list_mask">#}
+{#								<a href="">啪啪通虾片（冬阴功味）40g</a>#}
+{#								<span class="shop_list_price">#}
+{#									<small>￥</small>9.<small>00</small>#}
+{#								</span>#}
+{#							</div>#}
+{#						</li>#}
+{#					</ul>#}
+{#				</li>#}
+{#			</ul>#}
+{#		</div>		#}
+{#	</div>#}
+	<!-- 良品手机商城 -->
+	<div class="phone_buy">
+		<h3>良品手机商城</h3>
+		<ul>
+			<li>
+				 <p>良品铺子美食旅行</p>
+				 <img src="{% static 'images/img_index/recom_code.jpg' %}" alt="良品铺子微信商城">
+			</li>
+			<li>
+				 <p>良品铺子微信商城</p>
+				 <img src="{% static 'images/img_index/recom_code.jpg' %}" alt="良品铺子微信商城">
+			</li>
+			<li>
+				<p>良品微博</p>
+				<div class="border_top">
+
+				</div>
+				<div class="weibo">
+					<div class="weiboTop clear_float">
+						<div class="weiboTop_pic">
+							<a href="http://weibo.com/517lppz?s=6cm7D0" target="_black">
+								<img src="{% static 'images/img_index/weiboTop_pic.jpg' %}" alt="良品铺子" title="良品铺子">
+							</a>
+						</div>
+						<div class="weiboTop_detail">
+							<dl class="weiboDetail_top">
+								<dt>
+									<a href="http://weibo.com/517lppz/profile?s=6cm7D0" target="_blank" alt="良品铺子" title="良品铺子">良品铺子</a>
+									<img src="{% static 'images/img_index/weibo_sign.png' %}" alt="" title="微博认证">
+								</dt>
+								<dd>
+									<span class="weiboShow_developerDetail_namedir">湖北 武汉</span>
+								</dd>
+							</dl>
+							<div class="weiboDetail_btn">
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!-- footer -->
+	<div class="footer">
+		<div class="foot_service">
+			<ul>
+				<li>
+					<em>100%</em>
+					<p>正品保证</p>
+				</li>
+				<li>
+					<em>10天</em>
+					<p>无理由退换货</p>
+				</li>
+				<li>
+					<em>满68元</em>
+					<p>全场包邮</p>
+				</li>
+				<li>
+					<em>积分抵现金</em>
+					<p>100积分=1元</p>
+				</li>
+				<li>
+					<em>开箱验货</em>
+					<p>先验货再签收</p>
+				</li>
+				<li>
+					<em>多仓就近发货</em>
+					<p>快速直达</p>
+				</li>
+			</ul>
+		</div>
+		<div class="foot_area">
+			<div class="foot_cont">
+				<div class="fc_contact">
+					<div class="ctt_icon">
+						热线
+					</div>
+					<div class="ctt_txt">
+						<p>
+							<strong>400-1177-517</strong>
+						</p>
+						<p>
+							良品铺子客服热线<br/>
+							周一至周日：9:00-22:00
+						</p>
+						<p>
+							招商热线<br/>
+							400-1177-517
+						</p>
+					</div>
+				</div>
+				<div class="fc_link">
+					<dl>
+						<dt><strong>购物指南</strong></dt>
+						<dd>
+							<a href="">安全账户</a>
+							<a href="">购物流程</a>
+							<a href="">老顾客重置密码</a>
+							<a href="">生日礼物流程</a>
+							<a href="">找回密码</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><strong>物流配送</strong></dt>
+						<dd>
+							<a href="">配送说明</a>
+							<a href="">签收与验货</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><strong>付款说明</strong></dt>
+						<dd>
+							<a href="">发票制度</a>
+							<a href="">公司转账</a>
+							<a href="">在线支付</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><strong>客户服务</strong></dt>
+						<dd>
+							<a href="">退换货服务</a>
+							<a href="">联系我们</a>
+							<a href="">退款说明</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt><strong>会员专区</strong></dt>
+						<dd>
+							<a href="">优惠券使用规则</a>
+							<a href="">积分制度</a>
+							<a href="">会员须知</a>
+						</dd>
+					</dl>
+				</div>
+				<div class="fc_follow">
+					<div class="qr_code">
+						<div class="qr_code_top">
+							<img src="{% static 'images/img_index/dz_qrcode.jpg' %}" alt="">
+						</div>
+						<span>微信二维码</span>
+					</div>
+					<div class="weibo_mail">
+							<p>微博关注</p>
+							<iframe src="http://widget.weibo.com/relationship/followbutton.php?btn=red&style=2&uid=1851770484&width=136&height=24&language=zh_cn" width="136" height="24" scrolling="no" frameborder="0"></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="foot_nav">
+				<ul>
+					<li><a href="">关于我们</a></li>
+					<li><a href="">联系我们</a></li>
+					<li><a href="">客户服务</a></li>
+					<li><a href="">诚聘英才</a></li>
+					<li><a href="">商务合作</a></li>
+					<li><a href="">媒体报道</a></li>
+					<li><a href="">网站地图</a></li>
+					<li><a href="">站长招募</a></li>
+				</ul>
+			</div>
+			<div class="foot_copyright">
+				Copyright@2006-2017 湖北良品铺子电子商务有限公司 All rights Reserved<br/>
+				<a href="">鄂ICP备15022981号</a><br/>
+				<a href="">
+					<img src="{% static 'images/img_index/gslogo.png' %}" alt="">
+				</a>
+
+			</div>
+		</div>
+	</div>
+	<!-- 右侧边栏 -->
+	<div class="right_navbar">
+		<ul class="rnb_list">
+			<li class="kf">
+				<a href="" class="hvr">
+					<span>客服咨询</span>
+					<i class="icon"></i>
+				</a>
+			</li>
+			<li class="gw">
+				<a href="javascript:;" class="go_cart">
+					<i class="icon"></i>
+					<span>购物车</span>
+					<small class="sum">0</small>
+				</a>
+			</li>
+			<li class="hy">
+				<a href="" class="hvr">
+					<span>会员中心</span>
+					<i class="icon"></i>
+				</a>
+			</li>
+			<li class="yh">
+				<a href="" class="hvr">
+					<span>我的优惠券</span>
+					<i class="icon"></i>
+				</a>
+			</li>
+			<li class="sc">
+				<a href="" class="hvr">
+					<span>我的关注</span>
+					<i class="icon"></i>
+				</a>
+			</li>
+		</ul>
+		<ul class="rnb_link">
+			<li class="qr" id="qr_cust">
+				<a href="">
+					<i class="icon"></i>
+					<div class="cust" id="qr_cust_display">
+						<img src="images/img_index/dz_qrcode.jpg" alt="">
+					</div>
+				</a>
+			</li>
+			<li class="goback">
+				<a href="javascript:void(0)" class="hvr">
+					<span>返回顶部</span>
+					<i class="icon"></i>
+				</a>
+			</li>
+		</ul>
+	</div>
+<!-- 左侧边栏 -->
+	<div class="floor_nav" id="aside_left_nav">
+		<span class="fn_tit">商品分类</span>
+		<ul class="fn_list">
+			<li class="floor_nav_01">
+				<a href="javascript:void(0)" name="#first_floor">
+					<i></i>
+					<span>坚果炒货</span>
+				</a>
+			</li>
+			<li class="floor_nav_02">
+				<a href="javascript:void(0)" name="#second_floor">
+					<i></i>
+					<span>肉脯鱼干</span>
+				</a>
+			</li>
+			<li class="floor_nav_03">
+				<a href="javascript:void(0)" name="#three_floor">
+					<i></i>
+					<span>果干果脯</span>
+				</a>
+			</li>
+			<li class="floor_nav_04">
+				<a href="javascript:void(0)" name="#four_floor">
+					<i></i>
+					<span>素食山珍</span>
+				</a>
+			</li>
+			<li class="floor_nav_05">
+				<a href="javascript:void(0)" name="#five_floor">
+					<i></i>
+					<span>糕点糖果</span>
+				</a>
+			</li>
+			<li class="floor_nav_06">
+				<a href="javascript:void(0)" name="#six_floor">
+					<i></i>
+					<span>进口食品</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+    <script type="text/javascript" src="{% static 'js/swiper.js'%}"></script>
+    <script type="text/javascript">
+		window.onload=function(){
+			var mySwiper=new Swiper(".swiper-container",{
+				direction:"horizontal",
+				autoplay:3000,
+				loop:true,
+				nextButton:".swiper-button-next", //上下箭头
+				prevButton:".swiper-button-prev",
+				pagination:'.swiper-pagination', //按钮导航
+				paginationClickable: true, //可点击按钮
+		        paginationBulletRender: function (swiper, index, className) {
+		            return '<span class="' + className + '">' + (index + 1) + '</span>';
+		        },
+		        freeMode : true,
+		        effect:"fade",//淡入淡出
+			});
+		}
+	</script>
+</body>
+</html>
+<script type="text/javascript" src="{% static 'js/jquery-1.8.3.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/cookieTools.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/public.js'%}"></script>
+<script type="text/javascript">
+$(function(){
+	InitUI();
+	MenuEvent();
+	login_cookie();
+	//更新购物车数量
+	let p=updateCartCount(); //获取购物车数据
+	if(p!=null){
+		//首先动态创建购物车条目，然后更新外部的购物车数量并计算总价，最后添加删除按钮的click事件
+		p.then(setCartList).then(setTopCartCount).then(delete_event);
+	}
+	//链接购物车
+	$(".go_cart").click(function(){
+		if(getCookie("userName")==null){
+			alert("请先登录");
+			location="login.html";
+		}else{
+			location="cart.html";
+		}
+	});
+	//搜索栏
+    {#$(document).ready(function () {#}
+    {#    var $search_bar = $('#search_bar');#}
+    {#    var $search_btn = $('#search_btn');#}
+    {#    $search_btn.bind('click',function () {#}
+    {#        var inputstr = $search_bar.val();#}
+    {#        $.getJSON('/search/',{'keywords':inputstr},function (data) {#}
+    {#                window.open('/go_search/',target='_self')#}
+    {#        })#}
+    {#    })#}
+    {#})#}
+	//动态创建购物车产品
+	function setCartList(data){
+		let goods_list_arr=data;
+		//动态创建商品
+		for(let i=0; i<goods_list_arr.length; i++){
+			$tr_goods_tr=$("<tr></tr>");
+			$tr_goods_tr.attr("goodsid",goods_list_arr[i].goodsId);
+			 //图片
+			$li_goods_img=$('<td class="tr_shop_img" width=60><a href="javascript:;"><img/></a></td>');
+			$li_goods_img.children().children().prop("src",goods_list_arr[i].goodsImg); //图片
+			//名称
+			$li_goods_name=$("<td><a></a></td>");
+			$li_goods_name.children("a").text(goods_list_arr[i].goodsName);//名称
+			$li_goods_name.children("a").prop({
+				"title":goods_list_arr[i].goodsName,
+				"target":"_blank"
+			});
+			$li_goods_delete=$('<td><span><b class="small_cart_price">¥'+goods_list_arr[i].goodsPrice+'</b> x <i class="small_cart_sum">'+goods_list_arr[i].beiyong1+'</i></span><br/><a href="javascript:;" class="cart_delete_btn">删除</a></td>');
+			$tr_goods_tr.append($li_goods_img,$li_goods_name,$li_goods_delete);
+			$(".buy_show tbody").append($tr_goods_tr);
+		}
+		var p = new Promise(function(resolve,reject){
+			resolve(goods_list_arr);
+		});
+		return p;
+	}
+	//商品删除按钮事件注册
+	function delete_event(){
+		$(".cart_delete_btn").click(function(){
+			let goodsid=$(this).parents("tr").attr("goodsid");
+			if(!confirm("真的真的真的不想要了？")){
+					return;
+			}
+			$.ajax({
+				type:"get",
+				url:"php/deleteGoods.php",
+				async:true,
+				data:{
+					"vipName":getCookie("userName"),
+					"goodsId":$(this).parents("tr").attr("goodsid")
+				},
+				success:function(msg){
+					if(msg==1){
+						$(".buy_show tbody tr").remove("tr[goodsid="+goodsid+"]");
+						//更新购物车数量和总价
+						updateCartCount().then(setTopCartCount);
+						console.log("删除成功");
+					}else{
+						console.log("删除失败");
+					}
+				}
+			});
+		});
+	}
+
+
+});
+</script>
